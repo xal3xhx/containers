@@ -1,7 +1,7 @@
 # /bin/bash
 
 cd ../apps
-export CONTAINERS=$(find . -name 'values.yaml' | xargs cat | grep "repository" | grep -v "{" | awk -F":" '{ print $2 }' | grep -v '^$' | grep -v "truecharts" | sort --unique)
+export CONTAINERS=$(find . -name 'values.yaml' | xargs cat | grep "repository" | grep -v "{" | awk -F":" '{ print $2 }' | grep -v '^$' | grep -v "truecharts" | grep -v "ghcr.io" | sort --unique)
 cd -
 echo "${CONTAINERS}" >> mirrors.txt
 for container in ${CONTAINERS}; do
