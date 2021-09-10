@@ -65,7 +65,7 @@
         "docker.io/library/eclipse-mosquitto",
         "docker.io/velero/velero",
         "docker.io/velero/velero-plugin-for-aws",
-        "docker.io/vaultwarden/server"
+        "docker.io/vaultwarden/server",
         "docker.io/akhilrex/podgrab",
         "docker.io/b4bz/homer",
         "docker.io/codercom/code-server",
