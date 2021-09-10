@@ -1,0 +1,76 @@
+name: "Housekeeping"
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+    paths:
+    - ".github/workflows/housekeeping.yaml"
+  schedule:
+  - cron: "0 1 * * *"
+
+jobs:
+  housekeeping:
+    runs-on: ubuntu-latest
+    name: "Housekeeping"
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.BOT_TOKEN }}
+
+      - name: Containers - Fetch new application versions
+        run: |
+          find ./containers/apps -maxdepth 1 -mindepth 1 -type d -exec basename {} \; | while read app; do
+            if test -f "./containers/apps/${app}/latest-version.sh"; then
+              version=$(bash "./containers/apps/${app}/latest-version.sh")
+              if [[ ! -z "${version}" || "${version}" != "null" ]]; then
+                echo "${version}" | tee "./containers/apps/${app}/VERSION" > /dev/null
+                echo "App: ${app} using version: ${version}"
+              fi
+            fi
+            if test -f "./containers/apps/${app}/BASE"; then
+              if test -f "./containers/apps/${app}/latest-base.sh"; then
+                base=$(bash "./containers/apps/${app}/latest-base.sh")
+                if [[ ! -z "${base}" || "${base}" != "null" ]]; then
+                  echo "${base}" | tee "containers/apps/${app}/BASE" > /dev/null
+                  echo "App: ${app} using Base: ${base}"
+                fi
+              fi
+            fi
+          done
+      - name: Containers - Fetch new mirror versions
+        run: |
+          find ./containers/apps -maxdepth 1 -mindepth 1 -type d -exec basename {} \; | while read app; do
+              version=$(head -1 ./containers/mirror/${app}/Dockerfile | sed 's/^FROM.*://' )
+              version="${version#*v}"
+              if [[ ! -z "${version}" || "${version}" != "null" ]]; then
+                echo "${version}" | tee "./containers/apps/${app}/VERSION" > /dev/null
+                echo "App: ${app} using version: ${version}"
+              fi
+          done
+      - name: Containers - Fetch new base versions
+        run: |
+          find ./containers/base -maxdepth 1 -mindepth 1 -type d -exec basename {} \; | while read app; do
+            if test -f "./containers/base/${app}/latest-version.sh"; then
+              version=$(bash "./containers/base/${app}/latest-version.sh")
+              if [[ ! -z "${version}" || "${version}" != "null" ]]; then
+                echo "${version}" | tee "./containers/base/${app}/VERSION" > /dev/null
+                echo "${app} ${version}"
+              fi
+            fi
+          done
+
+      - name: run pre-commit checks
+        continue-on-error: true
+        uses: pre-commit/action@v2.0.3
+
+      - name: Commit and Push Housekeeping
+        run: |
+          git config user.name "TrueCharts-Bot"
+          git config user.email "bot@truecharts.org"
+          git add --all
+          git commit -sm "Daily Housekeeping" || exit 0
+          git push
