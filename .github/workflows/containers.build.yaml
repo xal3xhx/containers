@@ -6,15 +6,17 @@ on:
     branches:
     - master
     paths:
-    - 'containers/apps/**'
-    - 'containers/base/**'
-    - 'containers/dev/**'
+    - 'apps/**'
+    - 'dev/**'
+    - 'base/**'
+    - 'mirror/**'
     - ".github/workflows/containers.build.yaml"
   pull_request:
     paths:
-    - 'containers/apps/**'
-    - 'containers/base/**'
-    - 'containers/dev/**'
+    - 'apps/**'
+    - 'dev/**'
+    - 'base/**'
+    - 'mirror/**'
     - ".github/workflows/containers.build.yaml"
 
 env:
@@ -37,13 +39,14 @@ jobs:
         list-files: json
         filters: |
           changed:
-          - 'containers/apps/**'
-          - 'containers/base/**'
-          - 'containers/dev/**'
+          - 'apps/**'
+          - 'dev/**'
+          - 'base/**'
+          - 'mirror/**'
     - run: echo '${{ toJson(steps.filter.outputs) }}' > changes.json
     - id: reduce
       run: |
-        CONTAINERS=$(jq --raw-output '.changed_files | fromjson | .[] |= sub("(?<filepath>(?<first_directory>(?<root1>[\/]?)[^\/]+\/)(?<second_directory>(?<root2>[\/]?)[^\/]+\/(?<third_directory>(?<root3>[\/]?)[^\/]+)(?<extra_paths>.+)))"; "\(.third_directory)") | unique' changes.json)
+        CONTAINERS=$(jq --raw-output '.changed_files | fromjson | .[] |= sub("(?<filepath>(?<first_directory>(?<root1>[/]?)[^/]+/)(?<second_directory>(?<root2>[/]?)[^/]+)(?<extra_paths>.+))"; "\(.second_directory)") | unique' changes.json)
         echo ::set-output name=containers::${CONTAINERS}
 
   hadolint:
@@ -78,21 +81,26 @@ jobs:
     - name: Prepare
       id: prep
       run: |
-        if test -f "./containers/apps/${{ matrix.container }}/Dockerfile"; then
+        if test -f "./apps/${{ matrix.container }}/Dockerfile"; then
           CATEGORY="apps"
-        elif test -f "./containers/dev/${{ matrix.container }}/Dockerfile"; then
+          VERSION=$(cat ./${CATEGORY}/${{ matrix.container }}/VERSION)
+        elif test -f "./dev/${{ matrix.container }}/Dockerfile"; then
           CATEGORY="dev"
-        elif test -f "./containers/mirror/${{ matrix.container }}/Dockerfile"; then
+          VERSION=$(cat ./${CATEGORY}/${{ matrix.container }}/VERSION)
+        elif test -f "./mirror/${{ matrix.container }}/Dockerfile"; then
           CATEGORY="mirror"
+          echo ::set-output name=category::${CATEGORY}
+          VERSION=$(head -1 ./${CATEGORY}/${{ matrix.container }}/Dockerfile | sed 's/^FROM.*://' )
+          VERSION="${VERSION#*v}"
         else
           CATEGORY="base"
+          VERSION=$(cat ./${CATEGORY}/${{ matrix.container }}/VERSION)
         fi
         echo ::set-output name=category::${CATEGORY}
-        VERSION=$(cat ./containers/${CATEGORY}/${{ matrix.container }}/VERSION)
         echo ::set-output name=version::${VERSION}
         PLATFORM="linux/amd64"
         echo ::set-output name=platform::${PLATFORM}
-        if test -f "./containers/${CATEGORY}/${{ matrix.container }}/goss.yaml"; then
+        if test -f "./${CATEGORY}/${{ matrix.container }}/goss.yaml"; then
           echo ::set-output name=goss::true
         else
           echo ::set-output name=goss::false
@@ -143,7 +151,7 @@ jobs:
       with:
         build-args: VERSION=${{ steps.prep.outputs.version }}
         context: .
-        file: ./containers/${{ steps.prep.outputs.category }}/${{ matrix.container }}/Dockerfile
+        file: ./${{ steps.prep.outputs.category }}/${{ matrix.container }}/Dockerfile
         load: true
         tags: |
           ghcr.io/${{ github.repository_owner }}/${{ matrix.container }}:test
@@ -154,7 +162,7 @@ jobs:
     - name: Run GOSS tests
       if: ${{ steps.prep.outputs.goss == 'true' }}
       env:
-        GOSS_FILE: ./containers/${{ steps.prep.outputs.category }}/${{ matrix.container }}/goss.yaml
+        GOSS_FILE: ./${{ steps.prep.outputs.category }}/${{ matrix.container }}/goss.yaml
       run: |
         dgoss run ghcr.io/${{ github.repository_owner }}/${{ matrix.container }}:test
 
@@ -165,7 +173,7 @@ jobs:
         build-args: VERSION=${{ steps.prep.outputs.version }}
         context: .
         platforms: ${{ steps.prep.outputs.platform }}
-        file: ./containers/${{ steps.prep.outputs.category }}/${{ matrix.container }}/Dockerfile
+        file: ./${{ steps.prep.outputs.category }}/${{ matrix.container }}/Dockerfile
         push: ${{ steps.prep.outputs.push }}
         tags: |
           ghcr.io/${{ github.repository_owner }}/${{ matrix.container }}:latest

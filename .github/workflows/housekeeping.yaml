@@ -23,41 +23,31 @@ jobs:
 
       - name: Containers - Fetch new application versions
         run: |
-          find ./containers/apps -maxdepth 1 -mindepth 1 -type d -exec basename {} \; | while read app; do
-            if test -f "./containers/apps/${app}/latest-version.sh"; then
-              version=$(bash "./containers/apps/${app}/latest-version.sh")
+          find ./apps -maxdepth 1 -mindepth 1 -type d -exec basename {} \; | while read app; do
+            if test -f "./apps/${app}/latest-version.sh"; then
+              version=$(bash "./apps/${app}/latest-version.sh")
               if [[ ! -z "${version}" || "${version}" != "null" ]]; then
-                echo "${version}" | tee "./containers/apps/${app}/VERSION" > /dev/null
+                echo "${version}" | tee "./apps/${app}/VERSION" > /dev/null
                 echo "App: ${app} using version: ${version}"
               fi
             fi
-            if test -f "./containers/apps/${app}/BASE"; then
-              if test -f "./containers/apps/${app}/latest-base.sh"; then
-                base=$(bash "./containers/apps/${app}/latest-base.sh")
+            if test -f "./apps/${app}/BASE"; then
+              if test -f "./apps/${app}/latest-base.sh"; then
+                base=$(bash "./apps/${app}/latest-base.sh")
                 if [[ ! -z "${base}" || "${base}" != "null" ]]; then
-                  echo "${base}" | tee "containers/apps/${app}/BASE" > /dev/null
+                  echo "${base}" | tee "apps/${app}/BASE" > /dev/null
                   echo "App: ${app} using Base: ${base}"
                 fi
               fi
             fi
           done
-      - name: Containers - Fetch new mirror versions
-        run: |
-          find ./containers/apps -maxdepth 1 -mindepth 1 -type d -exec basename {} \; | while read app; do
-              version=$(head -1 ./containers/mirror/${app}/Dockerfile | sed 's/^FROM.*://' )
-              version="${version#*v}"
-              if [[ ! -z "${version}" || "${version}" != "null" ]]; then
-                echo "${version}" | tee "./containers/apps/${app}/VERSION" > /dev/null
-                echo "App: ${app} using version: ${version}"
-              fi
-          done
       - name: Containers - Fetch new base versions
         run: |
-          find ./containers/base -maxdepth 1 -mindepth 1 -type d -exec basename {} \; | while read app; do
-            if test -f "./containers/base/${app}/latest-version.sh"; then
-              version=$(bash "./containers/base/${app}/latest-version.sh")
+          find ./base -maxdepth 1 -mindepth 1 -type d -exec basename {} \; | while read app; do
+            if test -f "./base/${app}/latest-version.sh"; then
+              version=$(bash "./base/${app}/latest-version.sh")
               if [[ ! -z "${version}" || "${version}" != "null" ]]; then
-                echo "${version}" | tee "./containers/base/${app}/VERSION" > /dev/null
+                echo "${version}" | tee "./base/${app}/VERSION" > /dev/null
                 echo "${app} ${version}"
               fi
             fi
