@@ -1,3 +1,3 @@
-FROM pihole/pihole:v0.0.01
+FROM pihole/pihole:v5.8.1
 
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
