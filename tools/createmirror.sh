@@ -15,3 +15,11 @@ for container in ${CONTAINERS}; do
     sed -i "s|PLACEHOLDER|${container}|g"  mirror/${basename}/Dockerfile
   fi
 done
+
+
+for container in ${CONTAINERS}; do
+  if [ -d "mirror/${container}" ]; then
+    basename=${container##*/} 
+    echo "${basename}..."
+  fi
+done
