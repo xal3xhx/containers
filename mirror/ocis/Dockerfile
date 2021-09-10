@@ -1,3 +1,3 @@
-FROM owncloud/ocis:v0.0.01
+FROM owncloud/ocis:1.11.0
 
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
