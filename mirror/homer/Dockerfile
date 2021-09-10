@@ -1,3 +1,3 @@
-FROM b4bz/homer:v0.0.01
+FROM b4bz/homer:21.07.1
 
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
