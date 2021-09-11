@@ -1,3 +1,3 @@
-FROM vexorian/dizquetv:0.0.69
+FROM vexorian/dizquetv:1.4.3
 
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
