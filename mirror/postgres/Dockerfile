@@ -1,3 +1,3 @@
-FROM postgres:9.6.23
+FROM postgres:13.4
 
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
