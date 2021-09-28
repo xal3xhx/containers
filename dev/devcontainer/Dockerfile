@@ -33,8 +33,6 @@ RUN --mount=type=bind,from=hd,source=/usr/bin/,target=/hdbin \
 # hadolint ignore=DL3008,DL3015,SC2086,SC2155
 RUN --mount=type=bind,from=gcl,source=/usr/local/bin,target=/gclbin \
   cp /gclbin/git-chglog /usr/local/bin/git-chglog
-  
-COPY ./.pre-commit-config.yaml /tmp/precommit/.pre-commit-config.yaml
 
 RUN \
   apt-get update \
@@ -70,11 +68,11 @@ RUN \
     yamale \
     yamllint \
   && \
+  mkdir /tmp/precommit/ && \
   cd /tmp/precommit && \
+  wget https://raw.githubusercontent.com/truecharts/apps/master/.pre-commit-config.yaml && \
   git init . && \
   pre-commit install-hooks && \
-  cd - && \
-  rm -Rf /tmp/precommit && \
   echo "installed pre-commit hooks:" && \
   ls ~/.cache/pre-commit/* \
   && \
@@ -86,13 +84,12 @@ RUN \
   cd catalog_validation && \
   git checkout $(git describe --tags $(git rev-list --tags --max-count=1)) && \
   pip install -U . && \
-  cd / \
-  && \
+  cd - && \
   rm -Rf \
     /tmp/Gemfile \
     /tmp/Gemfile.lock \
     /tmp/helm.tar.gz \
     /tmp/ct.tar.gz \
     /tmp/catalog_validation \
-    /tmp/* \
+    /tmp/precommit \
     || true
