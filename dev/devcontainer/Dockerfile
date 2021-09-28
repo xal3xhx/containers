@@ -1,9 +1,40 @@
-ARG VERSION="1.16"
-FROM mcr.microsoft.com/vscode/devcontainers/go:0-${VERSION}
+# [Choice] Ruby version: 2, 2.7, 2.6, 2.5
+ARG VARIANT="2"
+
+# hadolint ignore=DL3007
+FROM quay.io/helmpack/chart-releaser:v1.2.1 AS cr
+
+# hadolint ignore=DL3007
+FROM jnorwood/helm-docs:v1.5.0 AS hd
+
+# hadolint ignore=DL3007
+FROM quay.io/git-chglog/git-chglog:0.15.0 AS gcl
+
+# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.154.0/containers/ruby/.devcontainer/base.Dockerfile
+FROM mcr.microsoft.com/vscode/devcontainers/ruby:0-${VARIANT}
 
 ARG HELM_VERSION="3.5.4"
 ARG CT_VERSION=3.3.1
 ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONUNBUFFERED 1
+
+COPY Gemfile /tmp/Gemfile
+
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+# hadolint ignore=DL3008,DL3015,SC2086,SC2155
+RUN --mount=type=bind,from=cr,source=/usr/local/bin,target=/crbin \
+  cp /crbin/cr /usr/local/bin/cr
+
+# hadolint ignore=DL3008,DL3015,SC2086,SC2155
+RUN --mount=type=bind,from=hd,source=/usr/bin/,target=/hdbin \
+  cp /hdbin/helm-docs /usr/local/bin/helm-docs
+
+# hadolint ignore=DL3008,DL3015,SC2086,SC2155
+RUN --mount=type=bind,from=gcl,source=/usr/local/bin,target=/gclbin \
+  cp /gclbin/git-chglog /usr/local/bin/git-chglog
+  
+COPY ./.pre-commit-config.yaml /tmp/precommit/.pre-commit-config.yaml
 
 RUN \
   apt-get update \
@@ -13,6 +44,14 @@ RUN \
     gnupg2 \
     python3-pip \
     python3-setuptools \
+    debhelper-compat \
+    dh-python \
+    python3-dev \
+    devscripts \
+    python3-jsonschema \
+    python3-semantic-version \
+    python3-kubernetes \
+    python3-yaml \
   && \
   sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin \
   && \
@@ -31,6 +70,29 @@ RUN \
     yamale \
     yamllint \
   && \
-  rm \
+  cd /tmp/precommit && \
+  git init . && \
+  pre-commit install-hooks && \
+  cd - && \
+  rm -Rf /tmp/precommit && \
+  echo "installed pre-commit hooks:" && \
+  ls ~/.cache/pre-commit/* \
+  && \
+  bundle config set system 'true' \
+  && bundle install --gemfile /tmp/Gemfile \
+  && \
+  cd /tmp && \
+  git clone https://github.com/truenas/catalog_validation.git && \
+  cd catalog_validation && \
+  git checkout $(git describe --tags $(git rev-list --tags --max-count=1)) && \
+  pip install -U . && \
+  cd / \
+  && \
+  rm -Rf \
+    /tmp/Gemfile \
+    /tmp/Gemfile.lock \
     /tmp/helm.tar.gz \
-    /tmp/ct.tar.gz
+    /tmp/ct.tar.gz \
+    /tmp/catalog_validation \
+    /tmp/* \
+    || true
