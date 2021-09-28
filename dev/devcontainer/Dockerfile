@@ -56,8 +56,14 @@ RUN \
   && \
   bundle config set system 'true' \
   && bundle install --gemfile /tmp/Gemfile \
+  && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
+  && apt-get autoremove -y \
+  && apt-get clean \
   && \
-  rm -Rf \
+  rm -rf \
+    /tmp/* \
+    /var/lib/apt/lists/* \
+    /var/tmp/ \
     /tmp/Gemfile \
     /tmp/Gemfile.lock \
     /tmp/helm.tar.gz \
@@ -84,8 +90,15 @@ RUN \
   cd /tmp/catalog_validation && \
   git checkout $(git describe --tags $(git rev-list --tags --max-count=1)) && \
   pip install -U . && \
-  cd - && \
-  rm -Rf \
+  cd - \
+  && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
+  && apt-get autoremove -y \
+  && apt-get clean \
+  && \
+  rm -rf \
+    /tmp/* \
+    /var/lib/apt/lists/* \
+    /var/tmp/ \
     /tmp/catalog_validation
 
 RUN \
@@ -106,6 +119,16 @@ RUN \
   pre-commit install-hooks && \
   echo "installed pre-commit hooks:" && \
   ls ~/.cache/pre-commit/* && \
-  cd - && \
-  rm -Rf \
+  cd - \
+  && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
+  && apt-get autoremove -y \
+  && apt-get clean \
+  && \
+  rm -rf \
+    /tmp/* \
+    /var/lib/apt/lists/* \
+    /var/tmp/ \
     /tmp/precommit
+
+LABEL "maintainer"="TrueCharts <info@truecharts.org>"
+LABEL "org.opencontainers.image.source"="https://github.com/truecharts/apps"
