@@ -18,6 +18,7 @@ ARG CT_VERSION=3.3.1
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
 ENV K3S=v1.21
+ENV K3D_FIX_CGROUPV2=1
 
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
