@@ -137,7 +137,7 @@ RUN curl --silent --fail https://raw.githubusercontent.com/rancher/k3d/main/inst
   && k3d --version \
   && cd /tmp \
   && curl --silent --fail -L -o kubectl \
-  https://storage.googleapis.com/kubernetes-release/release/"$K8S"/bin/linux/amd64/kubectl \
+  "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" \
   && chmod +x kubectl \
   && sudo mv kubectl /usr/local/bin/
 
