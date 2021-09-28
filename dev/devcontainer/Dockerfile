@@ -83,6 +83,7 @@ RUN \
     python3-semantic-version \
     python3-kubernetes \
     python3-yaml \
+    python3-venv \
   && \
   cd /tmp && \
   git clone https://github.com/truenas/catalog_validation.git && \
