@@ -18,8 +18,6 @@ ARG CT_VERSION=3.3.1
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED 1
 
-COPY Gemfile /tmp/Gemfile
-
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # hadolint ignore=DL3008,DL3015,SC2086,SC2155
@@ -40,17 +38,10 @@ RUN \
   apt-get -y install --no-install-recommends \
     libonig-dev \
     gnupg2 \
-    python3-pip \
-    python3-setuptools \
-    debhelper-compat \
-    dh-python \
-    python3-dev \
-    devscripts \
-    python3-jsonschema \
-    python3-semantic-version \
-    python3-kubernetes \
-    python3-yaml \
   && \
+  cd /tmp && \
+  wget https://raw.githubusercontent.com/truecharts/apps/master/Gemfile && \
+  cd - && \
   sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin \
   && \
   curl -o /tmp/helm.tar.gz "https://get.helm.sh/helm-v${HELM_VERSION}-linux-$(dpkg --print-architecture).tar.gz" \
@@ -63,6 +54,46 @@ RUN \
   && tar xvzf /tmp/ct.tar.gz --strip-components=1 -C /etc/ct "etc/" \
   && chmod +x /usr/local/bin/ct \
   && \
+  bundle config set system 'true' \
+  && bundle install --gemfile /tmp/Gemfile \
+  && \
+  rm -Rf \
+    /tmp/Gemfile \
+    /tmp/Gemfile.lock \
+    /tmp/helm.tar.gz \
+    /tmp/ct.tar.gz
+
+RUN \
+  apt-get update \
+  && \
+  apt-get -y install --no-install-recommends \
+    python3-pip \
+    python3-setuptools \
+    debhelper-compat \
+    dh-python \
+    python3-dev \
+    devscripts \
+    python3-jsonschema \
+    python3-semantic-version \
+    python3-kubernetes \
+    python3-yaml \
+  && \
+  cd /tmp && \
+  git clone https://github.com/truenas/catalog_validation.git && \
+  cd - && \
+  cd /tmp/catalog_validation && \
+  git checkout $(git describe --tags $(git rev-list --tags --max-count=1)) && \
+  pip install -U . && \
+  cd - && \
+  rm -Rf \
+    /tmp/catalog_validation
+
+RUN \
+  apt-get update \
+  && \
+  apt-get -y install --no-install-recommends \
+    python3-pip \
+  && \
   pip3 install \
     pre-commit \
     yamale \
@@ -74,22 +105,7 @@ RUN \
   git init . && \
   pre-commit install-hooks && \
   echo "installed pre-commit hooks:" && \
-  ls ~/.cache/pre-commit/* \
-  && \
-  bundle config set system 'true' \
-  && bundle install --gemfile /tmp/Gemfile \
-  && \
-  cd /tmp && \
-  git clone https://github.com/truenas/catalog_validation.git && \
-  cd catalog_validation && \
-  git checkout $(git describe --tags $(git rev-list --tags --max-count=1)) && \
-  pip install -U . && \
+  ls ~/.cache/pre-commit/* && \
   cd - && \
   rm -Rf \
-    /tmp/Gemfile \
-    /tmp/Gemfile.lock \
-    /tmp/helm.tar.gz \
-    /tmp/ct.tar.gz \
-    /tmp/catalog_validation \
-    /tmp/precommit \
-    || true
+    /tmp/precommit
