@@ -16,7 +16,9 @@ FROM mcr.microsoft.com/vscode/devcontainers/ruby:0-${VARIANT}
 ARG HELM_VERSION="3.5.4"
 ARG CT_VERSION=3.3.1
 ENV DEBIAN_FRONTEND=noninteractive
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONUNBUFFERED=1
+ENV K3S=v1.21
+
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
@@ -130,6 +132,10 @@ RUN \
     /var/lib/apt/lists/* \
     /var/tmp/ \
     /tmp/precommit
+	
+RUN curl --silent --fail https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash \
+  && k3d --version
 
+	
 LABEL "maintainer"="TrueCharts <info@truecharts.org>"
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/apps"
