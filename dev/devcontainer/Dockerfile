@@ -134,7 +134,11 @@ RUN \
     /tmp/precommit
 	
 RUN curl --silent --fail https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash \
-  && k3d --version
+  && k3d --version \
+  && curl --silent --fail -L -o kubectl \
+  https://storage.googleapis.com/kubernetes-release/release/"$K8S"/bin/linux/amd64/kubectl && \
+  chmod +x kubectl && \
+  sudo mv kubectl /usr/local/bin/
 
 	
 LABEL "maintainer"="TrueCharts <info@truecharts.org>"
