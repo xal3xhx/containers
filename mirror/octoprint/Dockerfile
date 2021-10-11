@@ -1,3 +1,3 @@
-FROM octoprint/octoprint:1.6.1
+FROM octoprint/octoprint:1.7.0
 
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
