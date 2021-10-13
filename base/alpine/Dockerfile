@@ -7,9 +7,9 @@ SHELL ["/bin/sh", "-o", "pipefail", "-c"]
 
 RUN apk update && apk add --no-cache ca-certificates tini curl nano wget bash \
   && \
-  adduser apps \
-  --uid 568 \
-  --group \
+  groupadd apps -g 568 \
+  && \
+  useradd apps -u 568 -g 568 \
   --system \
   --disabled-password \
   --no-create-home \
