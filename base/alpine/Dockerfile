@@ -5,7 +5,7 @@ USER root
 
 SHELL ["/bin/sh", "-o", "pipefail", "-c"]
 
-RUN apk update && apk add --no-cache ca-certificates tini curl nano wget bash \
+RUN apk update && apk add --no-cache ca-certificates tini curl nano wget bash unzip \
   && \
   groupadd apps -g 568 \
   && \
