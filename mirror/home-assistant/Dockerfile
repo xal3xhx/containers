@@ -1,3 +1,3 @@
-FROM homeassistant/home-assistant:2021.10.5
+FROM homeassistant/home-assistant:2021.10.6
 
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
