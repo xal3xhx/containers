@@ -1,5 +1,5 @@
 # hadolint ignore=DL3007
-FROM quay.io/helmpack/chart-releaser:v1.2.1 AS cr
+FROM quay.io/helmpack/chart-releaser:v1.3.0 AS cr
 
 # hadolint ignore=DL3007
 FROM jnorwood/helm-docs:v1.5.0 AS hd
