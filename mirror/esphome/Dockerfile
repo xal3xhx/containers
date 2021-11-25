@@ -1,3 +1,3 @@
-FROM esphome/esphome:2021.11.1
+FROM esphome/esphome:2021.11.2
 
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
