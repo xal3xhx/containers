@@ -1,3 +1,3 @@
-FROM zwavejs/zwavejs2mqtt:6.0.1
+FROM zwavejs/zwavejs2mqtt:6.0.2
 
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
