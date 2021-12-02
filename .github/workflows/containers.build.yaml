@@ -90,7 +90,7 @@ jobs:
         elif test -f "./mirror/${{ matrix.container }}/Dockerfile"; then
           CATEGORY="mirror"
           echo ::set-output name=category::${CATEGORY}
-          VERSION=$(head -1 ./${CATEGORY}/${{ matrix.container }}/Dockerfile | sed 's/^FROM.*://' )
+          VERSION= $(head -1 ./${CATEGORY}/${{ matrix.container }}/Dockerfile |  cut -d'@' -f1 | sed 's/^FROM.*://' )
           VERSION="${VERSION#*v}"
         else
           CATEGORY="base"
