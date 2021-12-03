@@ -91,7 +91,15 @@ jobs:
           CATEGORY="mirror"
           echo ::set-output name=category::${CATEGORY}
           VERSION="$(head -1 ./${CATEGORY}/${{ matrix.container }}/Dockerfile |  cut -d'@' -f1 | sed 's/^FROM.*://' )"
+          VERSION="${tag:-auto}"
+          VERSION=$(echo $VERSION | sed "s/release-//g")
+          VERSION=$(echo $VERSION | sed "s/release_//g")
+          VERSION=$(echo $VERSION | sed "s/version-//g")
+          VERSION=$(echo $VERSION | sed "s/version_//g")
+          VERSION="${VERSION#*V.}"
+          VERSION="${VERSION#*v-}"
           VERSION="${VERSION#*v}"
+          VERSION="${VERSION%-*}"
         else
           CATEGORY="base"
           VERSION=$(cat ./${CATEGORY}/${{ matrix.container }}/VERSION)
