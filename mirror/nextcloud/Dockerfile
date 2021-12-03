@@ -1,2 +1,2 @@
-FROM docker.io/nextcloud:23.0.0@sha256:db251f5c7ace79b320b46a3b7bcac4df29a933183ca9563392fa0fb81f3312ee
+FROM docker.io/nextcloud:23.0.0@sha256:18665b8050449b7dafaf9ad76dbf8f5e6d91116ef88e28200282ac32a3e66aa4
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
