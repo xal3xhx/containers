@@ -132,7 +132,29 @@ RUN \
     /tmp/precommit
 	
 RUN \
-  pip install yq
+  apt-get update \
+  && \
+  apt-get -y install --no-install-recommends \
+    wget apt-transport-https gnupg lsb-release \
+  && \
+  wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add - \
+  && \
+  echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list \
+  && \
+  apt-get update \
+  && \
+  apt-get -y install --no-install-recommends \
+    trivy \
+  && \
+  pip install yq \
+  && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
+  && apt-get autoremove -y \
+  && apt-get clean \
+  && \
+  rm -rf \
+    /tmp/* \
+    /var/lib/apt/lists/* \
+    /var/tmp/
 	
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 
