@@ -86,7 +86,7 @@ RUN \
     python3-venv \
   && \
   cd /tmp && \
-  git clone https://github.com/truenas/catalog_validation.git && \
+  git clone https://github.com/truecharts/catalog_validation.git && \
   cd - && \
   cd /tmp/catalog_validation && \
   git checkout $(git describe --tags $(git rev-list --tags --max-count=1)) && \
