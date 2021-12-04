@@ -89,7 +89,6 @@ RUN \
   git clone https://github.com/truecharts/catalog_validation.git && \
   cd - && \
   cd /tmp/catalog_validation && \
-  git checkout $(git describe --tags $(git rev-list --tags --max-count=1)) && \
   pip install -U . && \
   cd - \
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
