@@ -135,7 +135,7 @@ RUN \
   apt-get update \
   && \
   apt-get -y install --no-install-recommends \
-    wget apt-transport-https gnupg lsb-release \
+    wget apt-transport-https gnupg lsb-release parralel \
   && \
   wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add - \
   && \
