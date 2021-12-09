@@ -1,2 +1,2 @@
-FROM bitnami/postgresql:14.1.0@sha256:8109654f6bd7a2ac9e8f7491bd6b4171f4680fc4439b20166472b17464094979
+FROM bitnami/postgresql:14.1.0@sha256:1e7e78cdb62af0932bfcd62ca490905f380520c26a21d7b20dbffd8bed8712c3
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
