@@ -32,7 +32,7 @@ jobs:
       matrix: "{\"container\": ${{ steps.reduce.outputs.containers }} }"
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2
     - uses: dorny/paths-filter@v2
       id: filter
       with:
@@ -54,9 +54,9 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2
     - name: hadolint
-      uses: reviewdog/action-hadolint@v1.26.0
+      uses: reviewdog/action-hadolint@985a0c74c649805d539d5fecc971e512f7f55410 # renovate: tag=v1.26.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         reporter: github-pr-review
@@ -75,7 +75,7 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[ci-skip]')"
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2
 
     # Define if tests and push should be run against which versions/platforms
     - name: Prepare
@@ -126,12 +126,12 @@ jobs:
         fi
 
     - name: Set up QEMU
-      uses: docker/setup-qemu-action@v1
+      uses: docker/setup-qemu-action@27d0a4f181a40b142cce983c5393082c365d1480 # renovate: tag=v1
       with:
         platforms: amd64
 
     - name: Login to GHCR
-      uses: docker/login-action@v1
+      uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9 # renovate: tag=v1
       if: github.event_name != 'pull_request'
       with:
         registry: ghcr.io
@@ -139,14 +139,14 @@ jobs:
         password: ${{ secrets.GHCR_TOKEN }}
         
     - name: Login to DockerHub
-      uses: docker/login-action@v1
+      uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9 # renovate: tag=v1
       if: github.event_name != 'pull_request'
       with:
         username: ${{ secrets.DH_USER }}
         password: ${{ secrets.DH_SECRET }}
         
     - name: Login to Quay
-      uses: docker/login-action@v1
+      uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9 # renovate: tag=v1
       if: github.event_name != 'pull_request'
       with:
         registry: quay.io
@@ -156,7 +156,7 @@ jobs:
     # Install and configure Buildx
     - name: Set up Docker Buildx
       id: buildx
-      uses: docker/setup-buildx-action@v1
+      uses: docker/setup-buildx-action@94ab11c41e45d028884a99163086648e898eed25 # renovate: tag=v1
       with:
         install: true
         version: latest
@@ -164,7 +164,7 @@ jobs:
 
     # Install the GOSS testing framework
     - name: Set up goss/dgoss
-      uses: e1himself/goss-installation-action@v1.0.4
+      uses: e1himself/goss-installation-action@88e5a33ec3f7d299fee2e259ff1a6032cb0cdd11 # renovate: tag=v1.0.4
       if: ${{ steps.prep.outputs.goss == 'true' }}
       with:
         version: 'v0.3.16'
@@ -172,7 +172,7 @@ jobs:
     # Creates a local build to run tests on
     - name: Build and Load local test-container
       if: ${{ steps.prep.outputs.goss == 'true' }}
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@a66e35b9cbcf4ad0ea91ffcaf7bbad63ad9e0229 # renovate: tag=v2
       with:
         build-args: VERSION=${{ steps.prep.outputs.version }}
         context: .
@@ -193,7 +193,7 @@ jobs:
 
     # Push if not a PR, otherwise just test the build process for all requested platforms
     - name: Build and Push
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@a66e35b9cbcf4ad0ea91ffcaf7bbad63ad9e0229 # renovate: tag=v2
       with:
         build-args: VERSION=${{ steps.prep.outputs.version }}
         context: .
