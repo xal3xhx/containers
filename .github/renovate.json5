@@ -11,7 +11,8 @@
     {
       "matchDatasources": ["docker"],
       "enabled": true,
-      "matchUpdateTypes": ["major", "minor", "patch"]
+      "matchUpdateTypes": ["major", "minor", "patch", "digest"],
+	  "pinDigests": true,
     },
     {
       "matchDatasources": ["docker"],
