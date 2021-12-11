@@ -1,2 +1,2 @@
-FROM anonaddy/anonaddy:0.8.8@sha256:068b25a6ee2053654253268e329f75d50703b2089cc8e6694b2367795af8de88
+FROM anonaddy/anonaddy:0.8.9@sha256:bdb4ee24613df693c0a3c01623f7409c2824b8efa98a2185f8095e42a3245a87
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
