@@ -53,10 +53,6 @@ jobs:
             fi
           done
 
-      - name: run pre-commit checks
-        continue-on-error: true
-        uses: pre-commit/action@9b88afc9cd57fd75b655d5c71bd38146d07135fe # renovate: tag=v2.0.3
-
       - name: Commit and Push Housekeeping
         run: |
           git config user.name "TrueCharts-Bot"
