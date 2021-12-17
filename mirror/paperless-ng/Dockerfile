@@ -1,2 +1,2 @@
-FROM jonaswinkler/paperless-ng:1.5.0@sha256:04e1106ff05824d833e2b443bac5100b35ea71a3dccfaa993ac5eca9d111dd6e
+FROM jonaswinkler/paperless-ng:1.5.0@sha256:b61d514e178ddfa4673e72d0440b3166d46ec977dc6bbc7a9a293adf64200f55
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
