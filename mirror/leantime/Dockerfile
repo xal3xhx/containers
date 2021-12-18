@@ -1,2 +1,2 @@
-FROM ghcr.io/nicholaswilde/leantime:2.1.7-ls6@sha256:60e3485f98d71f814f593c1c4d39cac78fc2748f7a1a4baacbbfa439ae031237
+FROM leantime/leantime:2.1.8@sha256:65f2463be0aea186f760a74c51f890a41218ce0331a89f326cc21a8a9b23b960
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
