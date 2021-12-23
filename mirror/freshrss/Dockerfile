@@ -1,2 +1,2 @@
-FROM ghcr.io/linuxserver/freshrss:version-1.18.1@sha256:12d5889d3a92cd6e493c44b9b5aa4f05aafbf7236ad5cd0a8b8e357fe6836f88
+FROM ghcr.io/linuxserver/freshrss:version-1.18.1@sha256:71de55d655505f28d7d6d2c7e45ee07c2db2641b64cffe226e77dc0452984ca3
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
