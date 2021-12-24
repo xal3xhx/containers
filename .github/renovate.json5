@@ -50,6 +50,16 @@
       "automergeType": "branch",
       "requiredStatusChecks": null,
       "matchUpdateTypes": ["minor", "patch", "digest", "pin"]
-    }
+    },
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "versioning": "loose",
+      "matchPackageNames": [
+        "ghcr.io/k8s-at-home/plex",
+        "ghcr.io/k8s-at-home/qbittorrent"
+      ]
+    },
   ]
 }
