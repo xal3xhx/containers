@@ -1,2 +1,2 @@
-FROM ghcr.io/linuxserver/nano-wallet:2021.11.18@sha256:ba4c7219197736e75003e36f8e3c821ea584a38e5bbd16cb92dd2328b4d7f4b7
+FROM ghcr.io/linuxserver/nano-wallet:2021.12.16@sha256:fdac02e669290b9cec33f2610ba9c8159ebfc59c9996222231b0deed26e701ee
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
