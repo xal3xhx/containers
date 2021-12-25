@@ -1,2 +1,2 @@
-FROM bitnami/prometheus:2.32.1@sha256:4254afd46194ee93217227066a2b109fdd0322d31a248b9abac22d2c3045995f
+FROM bitnami/prometheus:2.32.1@sha256:ee991c31b875ccb920cafd924ce1dfafd41b4f6afdd8be29e985f04703566a02
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
