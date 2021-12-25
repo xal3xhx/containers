@@ -1,3 +1,3 @@
-FROM owncloud/ocis:1.15.0@sha256:0d6da45057d0f94a2b13d0977554feb396daa5687819ef6e46a8bb1528e87c52
+FROM owncloud/ocis:1.16.0@sha256:2ce574ff7f51c27953cf699ce27eb520e493bf32582c0a8844642c6409ab4343
 
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
