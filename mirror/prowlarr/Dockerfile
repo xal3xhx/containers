@@ -1,2 +1,2 @@
-FROM ghcr.io/k8s-at-home/prowlarr:v0.1.8.1272@sha256:2b3f1cf35200ccb5a24c3ef755505cb63666e57b32e8af7328e21e3354b80306
+FROM ghcr.io/k8s-at-home/prowlarr:v0.1.9.1276@sha256:27dcd4c4ec01543b4c56a2e9fd5a02f4068e26acab12dceacccdcb887ae22e13
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
