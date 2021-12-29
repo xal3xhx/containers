@@ -1,3 +1,3 @@
-FROM gotson/komga:0.139.0@sha256:19796a1173a46f49336e5aa4bcdffc12ec4525a25b5796827fd6545f74078ed0
+FROM gotson/komga:0.140.0@sha256:33889236d49a1c35e241c03c2994ccd3e3da3d8afbfad3e3c48dd984b0d7a52b
 
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
