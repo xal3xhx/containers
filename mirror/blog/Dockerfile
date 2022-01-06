@@ -1,2 +1,2 @@
-FROM m1k1o/blog:latest@sha256:cafcb8b5ec7511d8bb609d5555abf5ec2a53e347df214b83add50bf25d724081
+FROM m1k1o/blog:latest@sha256:ffa411d9add6327184090a8a8016e5457aa64a78d4e0f9a4674e1c64661add41
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
