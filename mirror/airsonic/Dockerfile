@@ -1,2 +1,2 @@
-FROM ghcr.io/linuxserver/airsonic:version-v10.6.2@sha256:72f4478307bd0e6c39966d1ef9d4b17ac6b1cb87a9171e90959e2c3f63e19882
+FROM ghcr.io/linuxserver/airsonic:version-v10.6.2@sha256:7bf80502d906a7c4a35aa1e9d13a16514c7369d26652f62ee6377f51c9bc7bc2
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
