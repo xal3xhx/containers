@@ -1,2 +1,2 @@
-FROM quay.io/oriedge/k8s_gateway:v0.1.8@sha256:4937e28bb5dc4bd9c700a72d28e50d43929b4a9e8f64b4a306346426e6ed01e2
+FROM quay.io/oriedge/k8s_gateway:v0.2.0@sha256:3b415f8fe80e00331b901bd2932c8cece2a8bcc5e1ffb6eb6a80efa5751e6d13
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
