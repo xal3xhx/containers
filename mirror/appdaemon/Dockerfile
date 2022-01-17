@@ -1,2 +1,2 @@
-FROM docker.io/acockburn/appdaemon:4.2.0@sha256:8de3c87526d2fe74871b4e12318a28ff248adaa9891c7e56454deead5f62138f
+FROM docker.io/acockburn/appdaemon:4.2.1@sha256:c530b4701c9d1867a1ab435d1288f2cae68295b96ae1adc4f916cce99421ef50
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
