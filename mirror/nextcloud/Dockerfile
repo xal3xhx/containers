@@ -13,14 +13,6 @@ RUN set -ex; \
 
 RUN set -ex; \
     \
-    echo "deb https://repo.delellis.com.ar bullseye bullseye" > /etc/apt/sources.list.d/20-pdlib.list; \
-    wget -qO - https://repo.delellis.com.ar/repo.gpg.key | sudo apt-key add -; \
-    apt update; \
-    apt install php7.4-pdlib; \
-    rm -rf /var/lib/apt/lists/*
-
-RUN set -ex; \
-    \
     savedAptMark="$(apt-mark showmanual)"; \
     \
     apt-get update; \
