@@ -1,4 +1,4 @@
-FROM docker.io/nextcloud:23.0.0@sha256:6007cdb9e83c532af24d6e2b7f7a619bbb6348e9f4fe0bbd222a60d4f24fd369
+FROM docker.io/nextcloud:23.0.0@sha256:3286ed20a4d7a6b74952fceb2826c75144b504c9f6f7f28a0eddd3dbe1a01e18
 
 RUN set -ex; \
     \
