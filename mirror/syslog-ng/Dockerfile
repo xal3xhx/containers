@@ -1,2 +1,2 @@
-FROM ghcr.io/linuxserver/syslog-ng:3.30.1@sha256:d73fb98155e15cfd2c914c547bb1e523e4b39c6ce63a591819e6c00484954d9d
+FROM ghcr.io/linuxserver/syslog-ng:3.30.1@sha256:72645397c7b77c74f8929b1dbca1a8b47109988a671a53bfffc197c9e4d1ff01
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
