@@ -1,2 +1,2 @@
-FROM requarks/wiki:2.5.268@sha256:b31a0d01ad4e1bd1643102f6abe93826b68274db431ee0822edb14986f4682f8
+FROM requarks/wiki:2.5.272@sha256:cf2bb6ff2ea8867bd878ce9c29e2bee0d2444d8f6778f1b60487b491a7230ea5
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
