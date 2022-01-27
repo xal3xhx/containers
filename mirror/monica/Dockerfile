@@ -1,2 +1,2 @@
-FROM monica:3.6.1@sha256:517dd6236bfa445640954f56478e5a19ca71c5c3e826b4db7f60fadffe03c62b
+FROM monica:3.6.1@sha256:bcdf333f162b9f114afe7629cca476e9e8426df4e934b58d31a9955e821084b5
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
