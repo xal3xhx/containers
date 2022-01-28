@@ -1,2 +1,2 @@
-FROM ghcr.io/linuxserver/snipe-it:5.3.7@sha256:edc095d55cfbe06bd2d6a4502b5cb1488946feae5cb4796f0220ef7bb9b85ed9
+FROM ghcr.io/linuxserver/snipe-it:5.3.8@sha256:06992ea0c600c776993391a379967f41f938be5f503e0e404f7a20a332afd6c2
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
