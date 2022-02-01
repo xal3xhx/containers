@@ -16,7 +16,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
     --depth=1 \
     --recursive \
     https://github.com/NONLYOFFICE/build_tools.git \
-    /build_tools
+    /build_tools \
   && \
   apt-get -y update && \
   apt-get -y install python \
