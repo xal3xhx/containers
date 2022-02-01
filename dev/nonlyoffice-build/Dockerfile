@@ -12,17 +12,9 @@ USER root
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
-  git clone \
-    --depth=1 \
-    --recursive \
-    https://github.com/NONLYOFFICE/build_tools.git \
-    /build_tools \
-  && \
+  git clone --depth=1 --recursive https://github.com/NONLYOFFICE/build_tools.git /build_tools && \
   apt-get -y update && \
-  apt-get -y install python \
-                     python3 \
-                     sudo
-  && \
+  apt-get -y install python python3 sudo && \
   rm /usr/bin/python && ln -s /usr/bin/python2 /usr/bin/python
 
 WORKDIR /build_tools
