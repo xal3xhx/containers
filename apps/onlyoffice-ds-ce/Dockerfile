@@ -79,7 +79,6 @@ RUN wget -q -P /tmp "$PACKAGE_URL" && \
     apt-get -yq install /tmp/$(basename "$PACKAGE_URL") && \
     service postgresql stop && \
     service supervisor stop && \
-    chmod 755 /app/ds/*.sh && \
     rm -f /tmp/$(basename "$PACKAGE_URL") && \
     rm -rf /var/log/onlyoffice && \
     rm -rf /var/lib/apt/lists/*
