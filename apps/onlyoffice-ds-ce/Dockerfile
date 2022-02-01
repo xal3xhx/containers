@@ -12,12 +12,12 @@ USER root
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d && \
+    printf '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d && \
     apt-get -y update && \
     apt-get -yq install wget apt-transport-https gnupg locales && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0x8320ca65cb2de8e5 && \
     locale-gen en_US.UTF-8 && \
     echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections && \
-    printf '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d \
     apt-get -yq install \
         adduser \
         apt-utils \
