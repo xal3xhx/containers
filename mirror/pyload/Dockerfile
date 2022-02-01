@@ -1,2 +1,2 @@
-FROM ghcr.io/linuxserver/pyload:version-5de90278@sha256:d3c87933a5fd8c67a7add40706e0042ad229c9a47cd1bc7ba3953b8ad049a6ce
+FROM ghcr.io/linuxserver/pyload:version-360b2295@sha256:9fb444151b8641014a84c1fb8052c9c8a3668669b24eccc00f7a996e05ecf6b8
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
