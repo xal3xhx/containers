@@ -1,19 +1,31 @@
-FROM ubuntu:14.04
-ARG VARIANT="2"
+# hadolint ignore=DL3007
+FROM ghcr.io/truecharts/ubuntu:latest@sha256:8fdfa248ccf92903813d10319246be90ab62953c29cdbfc825cfc2498f5156ed
 
 ENV TZ=Etc/UTC
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt-get -y update && \
-    apt-get -y install python \
-                       python3 \
-                       sudo
-RUN rm /usr/bin/python && ln -s /usr/bin/python2 /usr/bin/python
-ADD . /build_tools
+ARG TARGETPLATFORM
+ARG VERSION
+ARG PACKAGE_URL="https://github.com/ONLYOFFICE/DocumentServer/releases/download/v${VERSION}/onlyoffice-documentserver_amd64.deb"
+
+USER root
+
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
+  git clone \
+    --depth=1 \
+    --recursive \
+    https://github.com/NONLYOFFICE/build_tools.git \
+    /build_tools
+  && \
+  apt-get -y update && \
+  apt-get -y install python \
+                     python3 \
+                     sudo
+  && \
+  rm /usr/bin/python && ln -s /usr/bin/python2 /usr/bin/python
+
 WORKDIR /build_tools
 
 CMD cd tools/linux && \
     python3 ./automate.py
-
-LABEL "maintainer"="TrueCharts <info@truecharts.org>"
-LABEL "org.opencontainers.image.source"="https://github.com/truecharts/apps"
