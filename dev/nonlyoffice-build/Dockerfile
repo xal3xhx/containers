@@ -13,7 +13,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
   apt-get -y update && \
-  apt-get -y install python python3 sudo git && \
+  apt-get -y install gnupg ca-certificates curl lsb-release python python3 sudo git && \
   git clone --depth=1 --recursive https://github.com/NONLYOFFICE/build_tools.git /build_tools && \
   rm /usr/bin/python && ln -s /usr/bin/python2 /usr/bin/python
 
