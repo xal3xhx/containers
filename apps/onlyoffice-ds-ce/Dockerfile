@@ -7,8 +7,9 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ENV PRODUCT_VERSION='7.0.0' BUILD_NUMBER='132' NODE_ENV='production'
 
-RUN cd "/build_tools/tools/linux" && python3 ./automate.py server && echo "/build_tools/out/package/onlyoffice"
+RUN cd "/build_tools/tools/linux" && python3 ./automate.py server
 
+RUN echo "/build_tools/out"
 
 # hadolint ignore=DL3007
 FROM ghcr.io/truecharts/ubuntu:latest@sha256:8fdfa248ccf92903813d10319246be90ab62953c29cdbfc825cfc2498f5156ed
@@ -23,9 +24,8 @@ USER root
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-COPY --from=builder /build_tools/out/package/onlyoffice /build_tools/out/package/onlyoffice
-
-RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d && \
+RUN --mount=type=bind,from=builder,source=/build_tools/out,target=/build_tools/out \
+    echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d && \
     printf '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d && \
     apt-get -y update && \
     apt-get -yq install wget apt-transport-https gnupg locales && \
