@@ -100,5 +100,7 @@ RUN git clone --depth=1 --recursive https://github.com/NONLYOFFICE/build_tools.g
 
 WORKDIR /build_tools
 
+RUN cd "/build_tools/tools/linux" && python3 ./automate.py server && echo "/build_tools/out/package/onlyoffice"
+
 CMD cd tools/linux && \
     python3 ./automate.py server
