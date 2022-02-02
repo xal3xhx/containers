@@ -101,4 +101,4 @@ RUN git clone --depth=1 --recursive https://github.com/NONLYOFFICE/build_tools.g
 WORKDIR /build_tools
 
 CMD cd tools/linux && \
-    python3 ./automate.py
+    python3 ./automate.py server

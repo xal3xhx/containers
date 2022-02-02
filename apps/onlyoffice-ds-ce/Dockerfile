@@ -1,4 +1,14 @@
 # hadolint ignore=DL3007
+FROM ghcr.io/truecharts/nonlyoffice-build:latest as builder
+
+USER root
+
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+RUN cd /build_tools/tools/linux && python3 ./automate.py server && echo "/build_tools/out/package/onlyoffice"
+
+
+# hadolint ignore=DL3007
 FROM ghcr.io/truecharts/ubuntu:latest@sha256:8fdfa248ccf92903813d10319246be90ab62953c29cdbfc825cfc2498f5156ed
 
 ARG TARGETPLATFORM
