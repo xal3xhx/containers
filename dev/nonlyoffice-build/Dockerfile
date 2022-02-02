@@ -25,10 +25,20 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
   apt-transport-https \
   autoconf2.13 \
   build-essential \
-  ca-certificates \
   cmake \
-  curl \
-  git \
+  && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
+  && apt-get autoremove -y \
+  && apt-get clean \
+  && \
+  rm -rf \
+    /tmp/* \
+    /var/lib/apt/lists/* \
+    /var/tmp/ \
+  && \
+  rm /usr/bin/python && ln -s /usr/bin/python2 /usr/bin/python
+
+RUN apt-get -y update && \
+  apt-get -y install \
   glib-2.0-dev \
   libglu1-mesa-dev \
   libgtk-3-dev \
@@ -51,13 +61,42 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
   libxrender-dev \
   libxss1 \
   libncurses5 \
+  && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
+  && apt-get autoremove -y \
+  && apt-get clean \
+  && \
+  rm -rf \
+    /tmp/* \
+    /var/lib/apt/lists/* \
+    /var/tmp/
+	
+RUN apt-get -y update && \
+  apt-get -y install \
   nodejs \
   npm \
   yarn \
-  openjdk-11-jdk \
+  && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
+  && apt-get autoremove -y \
+  && apt-get clean \
   && \
-  git clone --depth=1 --recursive https://github.com/NONLYOFFICE/build_tools.git /build_tools && \
-  rm /usr/bin/python && ln -s /usr/bin/python2 /usr/bin/python
+  rm -rf \
+    /tmp/* \
+    /var/lib/apt/lists/* \
+    /var/tmp/
+	
+RUN apt-get -y update && \
+  apt-get -y install \
+  openjdk-11-jdk \
+  && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
+  && apt-get autoremove -y \
+  && apt-get clean \
+  && \
+  rm -rf \
+    /tmp/* \
+    /var/lib/apt/lists/* \
+    /var/tmp/
+
+RUN git clone --depth=1 --recursive https://github.com/NONLYOFFICE/build_tools.git /build_tools 
 
 WORKDIR /build_tools
 
