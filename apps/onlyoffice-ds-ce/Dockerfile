@@ -1,11 +1,13 @@
 # hadolint ignore=DL3007
-FROM ghcr.io/truecharts/nonlyoffice-build:latest as builder
+FROM ghcr.io/truecharts/nonlyoffice-build:latest AS builder
 
 USER root
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN cd /build_tools/tools/linux && python3 ./automate.py server && echo "/build_tools/out/package/onlyoffice"
+ENV PRODUCT_VERSION='7.0.0' BUILD_NUMBER='132' NODE_ENV='production'
+
+RUN cd "/build_tools/tools/linux" && python3 ./automate.py server && echo "/build_tools/out/package/onlyoffice"
 
 
 # hadolint ignore=DL3007
