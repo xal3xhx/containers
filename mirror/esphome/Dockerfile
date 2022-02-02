@@ -1,3 +1,3 @@
-FROM esphome/esphome:2022.1.2@sha256:0c5140ba3d976467b489c5106f7e7b191f1624a9fe9a3eebb10a283f379dc317
+FROM esphome/esphome:2022.1.3@sha256:3df8bc7b1cbab63f9de91a17a12058ca0770d8c4ce8c908c83164a98427cb30d
 
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
