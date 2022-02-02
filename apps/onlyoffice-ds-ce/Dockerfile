@@ -1,5 +1,5 @@
 # hadolint ignore=DL3007
-FROM ghcr.io/truecharts/nonlyoffice-build:latest AS builder
+FROM ghcr.io/truecharts/nonlyoffice-build:latest@sha256:df1b2ba585991594515fa058b3565636ac72bd518618559835bc9f5968f5c13d AS builder
 
 USER root
 
