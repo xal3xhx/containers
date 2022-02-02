@@ -23,6 +23,8 @@ USER root
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
+COPY --from=builder /build_tools/out/package/onlyoffice /build_tools/out/package/onlyoffice
+
 RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d && \
     printf '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d && \
     apt-get -y update && \
