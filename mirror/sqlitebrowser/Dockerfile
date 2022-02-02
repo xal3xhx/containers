@@ -1,2 +1,2 @@
-FROM ghcr.io/linuxserver/sqlitebrowser:3.12.2@sha256:e825f92d345753d82dc205a486a3aeadd04daf9a508706aeaa08b1c76a51faae
+FROM ghcr.io/linuxserver/sqlitebrowser:3.12.2@sha256:f3b729dd8e6e7a77b320e5f6d872ac2a29e70c6cdf649448fc4b6074b7ef384c
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
