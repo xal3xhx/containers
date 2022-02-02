@@ -13,7 +13,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
   apt-get -y update && \
-  apt-get -y install 
+  apt-get -y install \
   gnupg \
   ca-certificates \
   curl \
