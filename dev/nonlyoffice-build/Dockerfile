@@ -100,6 +100,7 @@ RUN apt-get -y update && \
   build-essential \
   m4 \
   npm \
+  debhelper \
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && apt-get autoremove -y \
   && apt-get clean \
