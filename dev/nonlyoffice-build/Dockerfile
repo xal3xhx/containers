@@ -111,9 +111,7 @@ RUN apt-get -y update && \
 
 RUN git clone --depth=1 --recursive https://github.com/NONLYOFFICE/build_tools.git /build_tools 
 
-RUN git clone https://github.com/ONLYOFFICE/document-server-package.git /document-server-package && \
-  cd /document-server-package/deb && \
-  apt build-dep .
+RUN git clone https://github.com/ONLYOFFICE/document-server-package.git /document-server-package
 
 WORKDIR /build_tools
 
