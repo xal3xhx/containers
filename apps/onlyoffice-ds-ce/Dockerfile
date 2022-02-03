@@ -1,17 +1,4 @@
 # hadolint ignore=DL3007
-FROM ghcr.io/truecharts/nonlyoffice-build:latest@sha256:8d92d58fed91d6fcf722383410567928fc22e15d9e39eaba48f857968b6f2960 AS builder
-
-USER root
-
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-
-ENV PRODUCT_VERSION='7.0.0' BUILD_NUMBER='132' NODE_ENV='production'
-
-RUN cd "/build_tools/tools/linux" && python3 ./automate.py server
-
-RUN echo "/build_tools/out"
-
-# hadolint ignore=DL3007
 FROM ghcr.io/truecharts/ubuntu:latest@sha256:f4b95e7f5a1c6c7736fef2a1800284058ccd53aa720536d0f1d72cf80faa4d2d
 
 ARG TARGETPLATFORM
@@ -24,8 +11,7 @@ USER root
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN --mount=type=bind,from=builder,source=/build_tools/out,target=/build_tools/out \
-    echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d && \
+RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d && \
     printf '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d && \
     apt-get -y update && \
     apt-get -yq install wget apt-transport-https gnupg locales && \
