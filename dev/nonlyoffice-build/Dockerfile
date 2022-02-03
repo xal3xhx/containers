@@ -5,7 +5,6 @@ ENV TZ=Etc/UTC
 
 ARG TARGETPLATFORM
 ARG VERSION
-ARG PACKAGE_URL="https://github.com/ONLYOFFICE/DocumentServer/releases/download/v${VERSION}/onlyoffice-documentserver_amd64.deb"
 
 USER root
 
@@ -96,7 +95,23 @@ RUN apt-get -y update && \
     /var/lib/apt/lists/* \
     /var/tmp/
 
+RUN apt-get -y update && \
+  apt-get -y install \
+  build-essential \
+  m4 \
+  npm \
+  && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
+  && apt-get autoremove -y \
+  && apt-get clean \
+  && \
+  rm -rf \
+    /tmp/* \
+    /var/lib/apt/lists/* \
+    /var/tmp/
+
 RUN git clone --depth=1 --recursive https://github.com/NONLYOFFICE/build_tools.git /build_tools 
+
+RUN git clone https://github.com/ONLYOFFICE/document-server-package.git /document-server-package 
 
 WORKDIR /build_tools
 
