@@ -1,2 +1,2 @@
-FROM shenxn/protonmail-bridge:1.8.12-1@sha256:c1a4a492efc53d15b5f097e494544b4a52d98b87d5e0b916997162d319b4a6b7
+FROM shenxn/protonmail-bridge:2.1.0-1@sha256:3cb51e207366709531ecc90ee41984a8af65f3dbae7e80c7356bad54d26c849e
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
