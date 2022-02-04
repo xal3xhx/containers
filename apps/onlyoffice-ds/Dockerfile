@@ -3,7 +3,7 @@ FROM ghcr.io/truecharts/ubuntu:latest@sha256:f4b95e7f5a1c6c7736fef2a1800284058cc
 
 ARG TARGETPLATFORM
 ARG VERSION
-ARG PACKAGE_URL="https://github.com/truecharts/onlyoffice/releases/download/${VERSION}/onlyoffice-documentserver_${VERSION}-truecharts_amd64.deb"
+ARG PACKAGE_URL="https://github.com/truecharts/onlyoffice/releases/download/v${VERSION}/onlyoffice-documentserver_${VERSION}-truecharts_amd64.deb"
 
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 DEBIAN_FRONTEND=noninteractive PG_VERSION=12
 
