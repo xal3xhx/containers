@@ -1,3 +1,3 @@
-FROM mikenye/piaware:v7.1@sha256:ed3d8de575052477beca1930bcc0daf1b17444cb1bf2e782b2545e823f67d3c8
+FROM mikenye/piaware:v7.1@sha256:776fa1d27560fe187ca5a50440503eb435c2a043466fe5f4c6fde3151c6335b1
 
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
