@@ -1,2 +1,2 @@
-FROM ghcr.io/linuxserver/tvheadend:version-c7b713ed@sha256:64e62333a2d3eee2bfad33ed9db84adc961c0bcfd79dd826b10cff5a9410ccc2
+FROM ghcr.io/linuxserver/tvheadend:version-c7b713ed@sha256:11d7b3c319c43f7fc0c47ea632bf19e839cb5e44b215b73989895ce5be570d07
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
