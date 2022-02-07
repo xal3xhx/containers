@@ -1,2 +1,2 @@
-FROM ghcr.io/nicholaswilde/odoo:version-14.0@sha256:7cff9672ce078f7e2cf132625f0bc0fa68e932955d23e2e8c2ce7c235d5c5f8d
+FROM docker.io/odoo:15.0@sha256:d5309469826d4737e37b93aba92c9a0f2638221042ec6092eac85daf6b76b0d9
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
