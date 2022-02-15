@@ -1,3 +1,3 @@
-FROM docker.io/nodered/node-red:2.2.0@sha256:6af5c7d0860e6e738cd1ad6037e9e5bc07be7237be30be97771f260f3708aec0
+FROM docker.io/nodered/node-red:2.2.1@sha256:8a668a56151705ea30603ea00fc5c009de412d100238dfdfe399d4cd2d62e28e
 
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
