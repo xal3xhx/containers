@@ -1,2 +1,2 @@
-FROM ghcr.io/linuxserver/pydio-cells:3.0.4@sha256:2f3f8a0d909c4ea0b50390bf54a04723a9c5c52129a58bbb056138e552cf182e
+FROM pydio/cells:3.0.4@sha256:3aea8ee8f3adb13fedc7d633619b1b69c3f75b79d3f2ea34e5f33755bacfdb1f
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
