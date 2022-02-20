@@ -1,2 +1,2 @@
-FROM ghcr.io/linuxserver/sickgear:version-release_0.25.26@sha256:80b39cff65c61ff30398cf5562a90d3e20441b0af05da2f9b3034a2e2fbae126
+FROM ghcr.io/linuxserver/sickgear:version-release_0.25.26@sha256:32e29b93363ff5f16af7242722bab4250b591df116b65fe9b079b44dbe7c1f40
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
