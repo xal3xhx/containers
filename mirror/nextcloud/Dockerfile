@@ -9,8 +9,6 @@ RUN set -ex; \
         ffmpeg \
         libmagickcore-6.q16-6-extra \
         libmagickcore-dev \
-        libde265 \
-        libheif \
         procps \
         smbclient \
     ; \
