@@ -1,2 +1,2 @@
-FROM ghcr.io/linuxserver/couchpotato:2021.11.22@sha256:a47f61f63a16971d3331e27122dec58920e17dfd3a1e8b0ec169cbd65b573b54
+FROM ghcr.io/linuxserver/couchpotato:latest@sha256:f846573965e3daf1bb8c9c49bb18ddcbc90ba98bd036eb8a42ebf4c46957cf4a
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
