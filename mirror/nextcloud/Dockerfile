@@ -4,15 +4,16 @@ RUN set -ex; \
     \
     apt-get update; \
     apt-get install -y --no-install-recommends \
+        nano \
+        imagemagick-common \
         ffmpeg \
         libmagickcore-6.q16-6-extra \
+        libmagickcore-dev \
+        libde265 \
+        libheif \
         procps \
         smbclient \
     ; \
-    rm -rf /var/lib/apt/lists/*
-
-RUN set -ex; \
-    \
     savedAptMark="$(apt-mark showmanual)"; \
     \
     apt-get update; \
