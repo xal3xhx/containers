@@ -10,7 +10,7 @@ RUN set -ex; \
         libmagickcore-6.q16-6-extra \
         libmagickcore-dev \
         libde265-0 \
-        libheif \
+        libheif_1.6.1-1build1 \
         procps \
         smbclient \
     ; \
