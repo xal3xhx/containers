@@ -1,2 +1,2 @@
-FROM ghcr.io/linuxserver/cloud9:version-1.29.2@sha256:d3c29bf4adaa9b3f5c908040ee650eedaae67e778bc3a3d59d86e957edefc5a8
+FROM ghcr.io/linuxserver/cloud9:version-1.29.2@sha256:cc2e6f496a4a1da47ca5f521e29f3d380256dd435a8bec2709d1b708f1e44429
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
