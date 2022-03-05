@@ -1,2 +1,2 @@
-FROM ghcr.io/linuxserver/chevereto:1.6.2@sha256:53589994f57abe9fa2fbe895c0b9932c7af3d44281fcc994476392b7fdddcb82
+FROM ghcr.io/linuxserver/chevereto:1.6.2@sha256:b6d89d8edcd9109c6c7d266cb6276387b297a2b3e653b2abf3a94e8bca30522d
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
