@@ -46,6 +46,11 @@
     },
     {
       "matchDatasources": ["docker"],
+      "versioning": "regex:^(?<major>\\d{2})(?<minor>\\d{2})(?<patch>\\d{2})-bullseye$",
+      "matchPackageNames": ["photoprism/photoprism"]
+    },
+    {
+      "matchDatasources": ["docker"],
       "automerge": true,
       "automergeType": "branch",
       "requiredStatusChecks": null,
