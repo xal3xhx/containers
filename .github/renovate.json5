@@ -51,6 +51,11 @@
     },
     {
       "matchDatasources": ["docker"],
+      "versioning": "regex:^[a-z0-9]{9}-v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-go\\d+\\.\\d+\\.\\d+$",
+      "matchPackageNames": ["storjlabs/storagenode"]
+    },
+    {
+      "matchDatasources": ["docker"],
       "automerge": true,
       "automergeType": "branch",
       "requiredStatusChecks": null,
