@@ -56,6 +56,11 @@
     },
     {
       "matchDatasources": ["docker"],
+      "versioning": "regex:^v\\.(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$",
+      "matchPackageNames": ["difegue/lanraragi"]
+    },
+    {
+      "matchDatasources": ["docker"],
       "automerge": true,
       "automergeType": "branch",
       "requiredStatusChecks": null,
