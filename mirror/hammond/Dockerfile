@@ -1,2 +1,2 @@
-FROM akhilrex/hammond:1.0.0@sha256:0ae85df3624c2d050d3c16bd1a66e4ff096c2e36af889ad0e795d36aedca186e
+FROM akhilrex/hammond:1.0.0@sha256:b5df7f1bd33e01645535f2d20f22731c9a0859c77b97ddcbf49f57635eb81646
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
