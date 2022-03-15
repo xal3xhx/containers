@@ -60,13 +60,6 @@
       "matchPackageNames": ["difegue/lanraragi"]
     },
     {
-      "matchDatasources": ["docker"],
-      "automerge": true,
-      "automergeType": "branch",
-      "requiredStatusChecks": null,
-      "matchUpdateTypes": ["minor", "patch", "digest", "pin"]
-    },
-    {
       "matchDatasources": [
         "docker"
       ],
