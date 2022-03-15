@@ -1,2 +1,2 @@
-FROM docker.io/iyuucn/iyuuplus:latest@sha256:2c93948c30c4c9a7bf7c5365c246c0d9beb5c967d01acd4b4a07d38b0f1ad6e0
+FROM docker.io/iyuucn/iyuuplus:latest@sha256:30e5fd50b5b7fbe8ff372cd9f6309c409683a469aee300413157c940c7b9f45b
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
