@@ -1,2 +1,2 @@
-FROM vabene1111/recipes:1.1.3@sha256:0987fbe557e2a66f7527ed04595f1d79f340ccea46d6247362c111ec8a4aa484
+FROM vabene1111/recipes:1.1.4@sha256:fbc2de571bee6c79d6756297c40f449b9eaea7a4a3333e5bbb83f6297c82601f
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
