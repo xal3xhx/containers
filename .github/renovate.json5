@@ -9,7 +9,7 @@
   "commitMessageSuffix": "",
   "rebaseWhen": "conflicted",
   "pinDigests": true,
-  "gitAuthor": "bot@truecharts.org",
+  "gitAuthor": "TrueCharts-Bot <bot@truecharts.org>",
   "packageRules": [
     {
       "matchDatasources": ["docker"],
