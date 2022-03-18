@@ -8,6 +8,7 @@
   "commitMessageExtra": "to {{newVersion}}",
   "commitMessageSuffix": "",
   "pinDigests": true,
+  "gitAuthor": "bot@truecharts.org",
   "packageRules": [
     {
       "matchDatasources": ["docker"],
