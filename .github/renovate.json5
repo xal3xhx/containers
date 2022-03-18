@@ -9,6 +9,7 @@
   "commitMessageSuffix": "",
   "rebaseWhen": "conflicted",
   "pinDigests": true,
+  "automerge": true,
   "gitAuthor": "TrueCharts-Bot <bot@truecharts.org>",
   "packageRules": [
     {
