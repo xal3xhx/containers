@@ -62,7 +62,7 @@
     {
       "matchDatasources": ["docker"],
       "automerge": true,
-      "matchUpdateTypes": ["minor", "patch", "digest", "pin"]
+      "matchUpdateTypes": ["major", "minor", "patch", "digest", "pin"]
     },
     {
       "matchDatasources": [
