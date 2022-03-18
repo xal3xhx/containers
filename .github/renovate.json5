@@ -65,6 +65,14 @@
       "automerge": true,
       "matchUpdateTypes": ["major", "minor", "patch", "digest", "pin"]
     },
+    //
+    // Version strategies
+    //
+    // Versioning for linuxserver two-three digit container versions
+    {
+      "packagePatterns": ["^linuxserver\\/","^deepquestai\\/"],
+      "versionScheme": "regex:^(?<compatibility>.*?(\\d+\\.)??)(?<major>\\d+)\\.(?<minor>\\d+)\\.?(?<patch>\\d+)?(-r?p?\\d)?$"
+    },
     {
       "matchDatasources": [
         "docker"
