@@ -1,3 +1,3 @@
-FROM deepquestai/deepstack:cpu-2021.09.1@sha256:359dc8c6c5056891b2a4f419902616b8b8b9bc9068b0c20fd40e13bc7a5583b5
+FROM deepquestai/deepstack:cpu-2022.01.1@sha256:4320be73987468b3040b2ca63daf2d3935c4d469b53aa40efb6176858488b500
 
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
