@@ -1,2 +1,2 @@
-FROM registry.gitlab.com/bockiii/deemix-docker:latest@sha256:8b000a7ad08ecd018a758eefaa4c29c8d7f247be54d4d35454ffb4f36a735bc0
+FROM registry.gitlab.com/bockiii/deemix-docker:latest@sha256:463bfd14ada5d300119c110cdb49e96e486695e6b0154d6a72986e717e69cdef
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
