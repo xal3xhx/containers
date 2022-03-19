@@ -7,11 +7,15 @@
   "commitMessageTopic": "{{depName}}",
   "commitMessageExtra": "to {{newVersion}}",
   "commitMessageSuffix": "",
+  "rebaseWhen": "conflicted",
   "pinDigests": true,
+  "automerge": true,
+  "gitAuthor": "TrueCharts-Bot <bot@truecharts.org>",
   "packageRules": [
     {
       "matchDatasources": ["docker"],
       "enabled": true,
+      "automerge": true,
       "matchUpdateTypes": ["major", "minor", "patch", "digest", "pin"],
 	  "pinDigests": true,
     },
@@ -62,7 +66,15 @@
     {
       "matchDatasources": ["docker"],
       "automerge": true,
-      "matchUpdateTypes": ["minor", "patch", "digest", "pin"]
+      "matchUpdateTypes": ["major", "minor", "patch", "digest", "pin"]
+    },
+    //
+    // Version strategies
+    //
+    // Versioning for linuxserver two-three digit container versions
+    {
+      "packagePatterns": ["^linuxserver\\/","^deepquestai\\/"],
+      "versionScheme": "regex:^(?<compatibility>.*?(\\d+\\.)??)(?<major>\\d+)\\.(?<minor>\\d+)\\.?(?<patch>\\d+)?(-r?p?\\d)?$"
     },
     {
       "matchDatasources": [

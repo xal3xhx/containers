@@ -1,2 +1,2 @@
-FROM teamspeak:3.13.6@sha256:1fa7d5a2bce954d98724a71faf4af7853e93db5d0a61c447fe03988492a91bed
+FROM teamspeak:3.13.6@sha256:ae80b94aa922c6b08790755a75e2760953f4026380a6e6c969cf00e6b773dde8
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
