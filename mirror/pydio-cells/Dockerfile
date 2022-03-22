@@ -1,2 +1,2 @@
-FROM pydio/cells:3.0.5@sha256:a28cedc511e2ccd5675843ab53646ba268cb6f7f1d9dc01dbd23463d7bc11621
+FROM pydio/cells:3.0.6@sha256:7d990d7b8dd77cfa9bfd07f3628e07a2a3e42700dbf15e418cb314e28bf5e5fe
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
