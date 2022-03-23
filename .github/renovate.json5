@@ -75,6 +75,11 @@
     },
     {
       "matchDatasources": ["docker"],
+      "versioning": "regex:^apache-(?<major>\\d+)\\.(?<minor>\\d+)\\.?(?<patch>\\d*)-prod$",
+      "matchPackageNames": ["kimai/kimai2"]
+    },    
+    {
+      "matchDatasources": ["docker"],
       "automerge": true,
       "matchUpdateTypes": ["major", "minor", "patch", "digest", "pin"]
     },
