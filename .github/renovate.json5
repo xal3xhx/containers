@@ -22,66 +22,79 @@
     {
       "matchDatasources": ["docker"],
       "semanticCommitScope": "images",
-      "separateMinorPatch": true
+      "separateMinorPatch": true,
+      "automerge": true,
     },
     // add labels according to package and update types
     {
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["major"],
       "commitMessagePrefix": "feat(images)!: ",
-      "labels": ["renovate/image", "dep/major"]
+      "labels": ["renovate/image", "dep/major"],
+      "automerge": true,
+	    
     },
     {
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["minor"],
       "semanticCommitType": "feat",
-      "labels": ["renovate/image", "dep/minor"]
+      "labels": ["renovate/image", "dep/minor"],
+      "automerge": true,
     },
     {
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["patch"],
       "semanticCommitType": "fix",
-      "labels": ["renovate/image", "dep/patch"]
+      "labels": ["renovate/image", "dep/patch"],
+      "automerge": true,
     },
     {
       "matchDatasources": ["docker"],
       "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-amd64$",
-      "matchPackageNames": ["blakeblackshear/frigate"]
+      "matchPackageNames": ["blakeblackshear/frigate"],
+      "automerge": true,
     },
     {
       "matchDatasources": ["docker"],
       "versioning": "regex:^(?<major>\\d{2})(?<minor>\\d{2})(?<patch>\\d{2})-bullseye$",
-      "matchPackageNames": ["photoprism/photoprism"]
+      "matchPackageNames": ["photoprism/photoprism"],
+      "automerge": true,
     },
     {
       "matchDatasources": ["docker"],
       "versioning": "regex:^version-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$",
-      "matchPackageNames": ["linuxserver/calibre-web"]
+      "matchPackageNames": ["linuxserver/calibre-web"],
+      "automerge": true,
     },
     {
       "matchDatasources": ["docker"],
       "versioning": "regex:^[a-z0-9]{9}-v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-go\\d+\\.\\d+\\.\\d+$",
-      "matchPackageNames": ["storjlabs/storagenode"]
+      "matchPackageNames": ["storjlabs/storagenode"],
+      "automerge": true,
     },
     {
       "matchDatasources": ["docker"],
       "versioning": "regex:^v\\.(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$",
-      "matchPackageNames": ["difegue/lanraragi"]
+      "matchPackageNames": ["difegue/lanraragi"],
+      "automerge": true,
     },
     {
       "matchDatasources": ["docker"],
       "versioning": "regex:^RELEASE\\.(?<major>\\d+)-(?<minor>\\d+)-(?<patch>\\d+)T\\d+-\\d+-\\d+Z$",
-      "matchPackageNames": ["minio/minio"]
+      "matchPackageNames": ["minio/minio"],
+      "automerge": true,
     },
     {
       "matchDatasources": ["docker"],
       "versioning": "regex:^apache-(?<major>\\d+)\\.(?<minor>\\d+)\\.?(?<patch>\\d*)-prod$",
-      "matchPackageNames": ["kimai/kimai2"]
+      "matchPackageNames": ["kimai/kimai2"],
+      "automerge": true,
     },    
     {
       "matchDatasources": ["docker"],
       "automerge": true,
-      "matchUpdateTypes": ["major", "minor", "patch", "digest", "pin"]
+      "matchUpdateTypes": ["major", "minor", "patch", "digest", "pin"],
+      "automerge": true,
     },
     //
     // Version strategies
