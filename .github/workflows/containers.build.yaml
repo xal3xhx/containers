@@ -100,6 +100,7 @@ jobs:
           VERSION=$(echo $VERSION | sed "s/release_//g")
           VERSION=$(echo $VERSION | sed "s/version-//g")
           VERSION=$(echo $VERSION | sed "s/version_//g")
+          VERSION=$(echo $VERSION | sed "s/apache-//g")
           VERSION="${VERSION#*V.}"
           VERSION="${VERSION#*v.}"
           VERSION="${VERSION#*v-}"
