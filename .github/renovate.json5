@@ -29,7 +29,7 @@
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["major"],
       "commitMessagePrefix": "feat(images)!: ",
-      "labels": ["renovate/image", "dep/major"],
+      "labels": ["renovate/image", "dep/major", "automerge"],
       "automerge": true,
 	    
     },
@@ -37,14 +37,21 @@
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["minor"],
       "semanticCommitType": "feat",
-      "labels": ["renovate/image", "dep/minor"],
+      "labels": ["renovate/image", "dep/minor", "automerge"],
       "automerge": true,
     },
     {
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["patch"],
       "semanticCommitType": "fix",
-      "labels": ["renovate/image", "dep/patch"],
+      "labels": ["renovate/image", "dep/patch", "automerge"],
+      "automerge": true,
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["digest"],
+      "semanticCommitType": "fix",
+      "labels": ["renovate/image", "dep/digest", "automerge"],
       "automerge": true,
     },
     {
