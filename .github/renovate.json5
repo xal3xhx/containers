@@ -92,7 +92,7 @@
     },
     {
       "matchDatasources": ["docker"],
-      "versioning": "regex:^fpm-(?<major>\\d+)\\.(?<minor>\\d+)\\.?(?<patch>\\d*)-prod$",
+      "versioning": "regex:^apache-(?<major>\\d+)\\.(?<minor>\\d+)\\.?(?<patch>\\d*)-prod$",
       "matchPackageNames": ["kimai/kimai2"],
       "automerge": true,
     },    
