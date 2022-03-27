@@ -1,2 +1,2 @@
-FROM duplicati/duplicati:beta@sha256:22f5231c3a36979750d10bc8df7fbbb7b112c9fca76d85288fa8e90afb6c9635
+FROM duplicati/duplicati:latest@sha256:3080419dc8612ac852db3a8e66407fd386efd2a27d467970ef7161bf27dd9717
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
