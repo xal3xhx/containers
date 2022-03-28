@@ -17,6 +17,8 @@ on:
     types:
       - completed
   status: {}
+  schedule:
+  - cron: "0 0 * * *"
   workflow_dispatch:
 jobs:
   automerge:
@@ -26,3 +28,5 @@ jobs:
         uses: "pascalgn/automerge-action@v0.14.3"
         env:
           GITHUB_TOKEN: "${{ secrets.BOT_TOKEN }}"
+          UPDATE_RETRY_SLEEP: 60000
+          UPDATE_RETRIES: 10
