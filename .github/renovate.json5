@@ -100,8 +100,8 @@
       "matchDatasources": ["docker"],
       "automerge": true,
       "matchUpdateTypes": ["major", "minor", "patch", "digest", "pin"],
-      "automerge": true,
     },
+	  
     //
     // Version strategies
     //
@@ -121,6 +121,19 @@
         "ghcr.io/k8s-at-home/qbittorrent",
         "sirfragalot/hyperion.ng",
       ],
+    },
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "quay.io/helmpack/chart-releaser",
+        "jnorwood/helm-docs",
+        "quay.io/git-chglog/git-chglog"
+      ],
+      "automerge": false,
+      "matchUpdateTypes": ["major", "minor", "patch", "digest", "pin"],
+      "labels": ["renovate/image", "ci"],
     },
   ]
 }
