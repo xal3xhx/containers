@@ -1,2 +1,2 @@
-FROM ghcr.io/linuxserver/mylar3:version-v0.6.3@sha256:fb148aa9c6d5d639eb2762b638e07d95aa65e5ba1143759b3e8c13a5764f35fc
+FROM linuxserver/mylar3:version-v0.6.3@sha256:9501de813292f20f911c656916e13fa3471afc05fd296d21bf752376bf3aa907
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
