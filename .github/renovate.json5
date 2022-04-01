@@ -74,6 +74,12 @@
     },
     {
       "matchDatasources": ["docker"],
+      "versioning": "regex:^version-v(?<major>\\d+)\\.(?<minor>\\d+)\\.?(?<patch>\\d*)$",
+      "matchPackageNames": ["linuxserver/mylar3"],
+      "automerge": true,
+    },     
+    {
+      "matchDatasources": ["docker"],
       "versioning": "regex:^[a-z0-9]{9}-v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-go\\d+\\.\\d+\\.\\d+$",
       "matchPackageNames": ["storjlabs/storagenode"],
       "automerge": true,
