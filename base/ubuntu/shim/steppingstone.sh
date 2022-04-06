@@ -21,5 +21,3 @@ if [ -f /custom/start.sh ]; then
 else
 	echo "---No container script found, continuing---"
 fi
-
-/entrypoint.sh

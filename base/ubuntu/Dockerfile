@@ -28,7 +28,7 @@ VOLUME [ "/config" ]
 
 
 COPY ./base/ubuntu/entrypoint.sh /entrypoint.sh
-ENTRYPOINT [ "/shim/steppingstone.sh" ]
+ENTRYPOINT [ "/usr/bin/tini", "--" ]
 
 LABEL "maintainer"="TrueCharts <info@truecharts.org>"
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/apps"
