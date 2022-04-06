@@ -9,13 +9,12 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 USER root
 
 RUN \
-  mkdir /custom
-  chown -R apps:apps /custom 
-  chmod -R 777 /custom
-  usermod -l apps kah \
-  && \
-  groupmod -n apps kah \
-  && chown -R apps:apps /config
+  mkdir /custom && \
+  chown -R apps:apps /custom  && \
+  chmod -R 777 /custom && \
+  usermod -l apps kah && \
+  groupmod -n apps kah && \
+  chown -R apps:apps /config
 
 COPY ./base/ubuntu/shim/greeting.sh /shim/greeting.sh
 COPY ./base/ubuntu/shim/steppingstone.sh /shim/steppingstone.sh
