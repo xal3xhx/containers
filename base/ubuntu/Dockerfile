@@ -10,10 +10,10 @@ USER root
 
 RUN \
   mkdir /custom && \
-  chown -R apps:apps /custom  && \
-  chmod -R 777 /custom && \
   usermod -l apps kah && \
   groupmod -n apps kah && \
+  chown -R apps:apps /custom  && \
+  chmod -R 777 /custom && \
   chown -R apps:apps /config
 
 COPY ./base/ubuntu/shim/greeting.sh /shim/greeting.sh
