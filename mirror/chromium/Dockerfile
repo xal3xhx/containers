@@ -1,2 +1,2 @@
-FROM ich777/chrome:latest@sha256:1e10ddac074995d34a56d9b65a160198b391d5dba1c6c18c56f401f9d7a591b6
+FROM ich777/chrome:latest@sha256:1373301aacee88da876946e4d1c30978df7cb1c3be6b4efe9348edea7520a06f
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers
