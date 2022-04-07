@@ -2,7 +2,7 @@
 FROM quay.io/helmpack/chart-releaser:v1.3.0@sha256:be34d8dbf00e44bf52fbade53f7e3f96277581a815628e23817b23827347ade1 AS cr
 
 # hadolint ignore=DL3007
-FROM jnorwood/helm-docs:v1.7.0@sha256:a1405b3c86c48f4178543ed03d40f7c786228acb48a4ee85b670803cf1effe78 AS hd
+FROM jnorwood/helm-docs:v1.8.1@sha256:9f054f590b49efe7deb933bd02b47911434ba7dde9890e757ce6e74920d8b520 AS hd
 
 # hadolint ignore=DL3007
 FROM quay.io/git-chglog/git-chglog:0.15.1@sha256:471db4cefc1a4dc0d8ee996447d5ac860f9496c982bcd29e90b390aff4e78175 AS gcl
