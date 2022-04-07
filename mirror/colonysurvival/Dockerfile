@@ -1,2 +1,2 @@
-FROM ich777/steamcmd:colonysurvival
+FROM ich777/steamcmd:colonysurvival@sha256:797a88d210e9f618a149a3caa6378c0b95888b7dc2409ae66d4f2a259cba02ea
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers

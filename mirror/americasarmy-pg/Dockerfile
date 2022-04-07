@@ -1,2 +1,2 @@
-FROM ich777/steamcmd:aaprovinggrounds
+FROM ich777/steamcmd:aaprovinggrounds@sha256:baaffbd15407f16f252bf50abe7fec41b653fe59e0c89b7963f144ba2edd5845
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers

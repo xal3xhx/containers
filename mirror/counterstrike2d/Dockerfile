@@ -1,2 +1,2 @@
-FROM ich777/cs2dserver:latest
+FROM ich777/cs2dserver:latest@sha256:e58348f89e41cdc7ac3ca2ef8158c8cace24a75212de8e264288c18d26675497
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers

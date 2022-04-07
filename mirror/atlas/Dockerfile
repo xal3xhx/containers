@@ -1,2 +1,2 @@
-FROM ich777/steamcmd:atlas
+FROM ich777/steamcmd:atlas@sha256:49e9e579a426678b8526967f128c9e03bfacf7219072ad552dfea26473dbda6a
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers

@@ -1,2 +1,2 @@
-FROM ich777/steamcmd:arkse
+FROM ich777/steamcmd:arkse@sha256:02a9642e9167ec6716ed04d4be2090df8434f6145075555fa93e58b8f83bd363
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers

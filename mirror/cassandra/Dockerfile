@@ -1,2 +1,2 @@
-FROM cassandra:latest
+FROM cassandra:latest@sha256:3e740efec16311884cec166fe90e0cfdd515b2fc9bd35efc1d870eac254f01a6
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers
