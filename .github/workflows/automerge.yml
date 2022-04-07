@@ -10,6 +10,21 @@ on:
       - ready_for_review
       - reopened
       - unlocked
+      - assigned
+      - unassigned
+      - labeled
+      - unlabeled
+      - opened
+      - edited
+      - closed
+      - reopened
+      - synchronize
+      - ready_for_review
+      - locked
+      - unlocked
+      - review_requested
+      - review_request_removed
+      
   pull_request_review:
     types:
       - submitted
