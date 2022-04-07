@@ -1,2 +1,2 @@
-FROM adguard/adguardhome:latest
+FROM adguard/adguardhome:latest@sha256:972de81d63797502e06cf32cb61ee21dff9a8c37d8b0d0075655d6f80dfcbc5c
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers

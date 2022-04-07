@@ -1,2 +1,2 @@
-FROM advplyr/audiobookshelf:latest
+FROM advplyr/audiobookshelf:latest@sha256:46de3b36dc8878024fa48e886b2c6091af902c7cac631104c780d43afffd85a6
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers

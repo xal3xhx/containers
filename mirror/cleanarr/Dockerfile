@@ -1,2 +1,2 @@
-FROM selexin/cleanarr:latest
+FROM selexin/cleanarr:latest@sha256:c7d1c4e997ed0e76783666ada280dfc764ca0282afe4b69d4d6abeddf8eb6f6f
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers

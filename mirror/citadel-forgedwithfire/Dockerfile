@@ -1,2 +1,2 @@
-FROM ich777/steamcmd:citadelfwf
+FROM ich777/steamcmd:citadelfwf@sha256:a07b1c3b4b4ed13b29ef49cf05800a972a9bbd9a6727ade097a048549ebb2d1a
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers

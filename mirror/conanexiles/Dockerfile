@@ -1,2 +1,2 @@
-FROM ich777/steamcmd:conanexiles
+FROM ich777/steamcmd:conanexiles@sha256:bb51d85ea9256e4b03640633bd28c3dfcce9e05a8552a216415bfb9ccfa7bfef
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers

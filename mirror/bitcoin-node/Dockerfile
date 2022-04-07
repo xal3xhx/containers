@@ -1,2 +1,2 @@
-FROM kylemanna/bitcoind:latest
+FROM kylemanna/bitcoind:latest@sha256:e519bb36398c816fb2905e832bdfc316aa660e9025eac3692151f4f30b5e9c51
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers
