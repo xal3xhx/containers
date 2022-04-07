@@ -1,2 +1,2 @@
-FROM docker.io/xal3xhx/fancy:latest@sha256:a8062ae12a136e1dc9661ada38b3fc1b419f5c9bf821358f1605d19eae6feee1
+FROM docker.io/xal3xhx/fancy:latest@sha256:9dffb1ca804724b16a58a42a84c9094f8528984690a2ad37553ca4ddeb28dc6b
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
