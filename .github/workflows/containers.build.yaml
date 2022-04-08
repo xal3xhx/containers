@@ -222,3 +222,9 @@ jobs:
     steps:
       - name: complete message
         run: echo "Container Build and Tests Completed Successfully"
+      - name: automerge
+        uses: pascalgn/automerge-action@8b306ad1983d0ea68c43e27101123e891ecff104 # tag=v0.15.2
+        env:
+          GITHUB_TOKEN: "${{ secrets.BOT_TOKEN }}"
+          UPDATE_RETRIES: 12
+          UPDATE_RETRY_SLEEP: 60000
