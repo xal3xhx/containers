@@ -222,6 +222,12 @@ jobs:
     steps:
       - name: complete message
         run: echo "Container Build and Tests Completed Successfully"
+        
+  automerge:
+    needs: [container-build-complete]
+    name: Automerge build
+    runs-on: ubuntu-latest
+    steps:
       - name: automerge
         uses: pascalgn/automerge-action@8b306ad1983d0ea68c43e27101123e891ecff104 # tag=v0.15.2
         env:
