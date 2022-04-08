@@ -8,7 +8,7 @@ FROM jnorwood/helm-docs:v1.8.1@sha256:9f054f590b49efe7deb933bd02b47911434ba7dde9
 FROM quay.io/git-chglog/git-chglog:0.15.1@sha256:471db4cefc1a4dc0d8ee996447d5ac860f9496c982bcd29e90b390aff4e78175 AS gcl
 
 # hadolint ignore=DL3007
-FROM ixsystems/catalog_validation:latest@sha256:64e021e40a94356bc3146112b2b8a4efe9ca9a861ada4803b659aad462fb14ea
+FROM ixsystems/catalog_validation:latest@sha256:1f0258b77d6ed070b3e2418a2792653568b5d33881c7dd23095cadb49d14ded5
 
 ARG TARGETPLATFORM
 ARG VERSION
