@@ -1,2 +1,2 @@
-FROM wiserain/flexget:3.3.6@sha256:1c68f9c0666970f5d907cc7b363172b965b0485af25dd93d6ded20c484802662
+FROM wiserain/flexget:3.3.7@sha256:7014ad0fd47332913c9020fe3dd58ca7c0b7c9cc037ba0441846f4885be51671
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
