@@ -1,2 +1,2 @@
-FROM ghcr.io/linuxserver/ipfs:2.14.0@sha256:bfe564892e27224dc4fdf5befb8d8f4c70c31099bbc267a41deb1802d6707198
+FROM ipfs/go-ipfs:v0.12.1@sha256:b2116f5237a640a4b30a75082269d91f7df5fcece6bd15d0d0b65759942bf6c4
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
