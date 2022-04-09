@@ -1,2 +1,2 @@
-FROM einar/meshcentral:latest@sha256:6e4f0f8235d5ea208682217c3ecd23c87d095a1c825b21f2ee3088536fecda6f
+FROM einar/meshcentral:latest@sha256:763ef4db0b11b5212acc3d1cd6a4e5866673901e6b8e93be7df6e21d874ff2e5
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
