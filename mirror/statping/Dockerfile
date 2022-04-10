@@ -1,2 +1,2 @@
-FROM statping/statping:v0.90.74@sha256:e874da513a5cf0375fc8e7e8cde533934b57804760c9e2d745a584fc26a664cb
+FROM adamboutcher/statping-ng:v0.90.78@sha256:222895591380e25a594a22e0ad0b8176d0a2747dd196252875e0b3e933c26ea3
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
