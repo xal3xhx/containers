@@ -1,2 +1,2 @@
-FROM ghcr.io/miguelndecarvalho/speedtest-exporter:v3.4.3@sha256:09b532e16c80d0db3fd63aacda087203857a23f12d4ff1e7a093d10f331523e1
+FROM ghcr.io/miguelndecarvalho/speedtest-exporter:v3.5.0@sha256:0fb423caa1cb2312a09ce4a2f030a24c9fe8921653bee8c9f1e91b244fd684b1
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
