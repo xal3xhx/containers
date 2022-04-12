@@ -1,2 +1,2 @@
-FROM mpepping/cyberchef:latest@sha256:4a4e6c397873a25e6ee222e6dd9a00f6826f1556132ce1fcd493d39e85ec77f0
+FROM mpepping/cyberchef:latest@sha256:832b259947002cb6b2dcd6d4c7b891d35b69387e671ea252481e07a740691c9d
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers
