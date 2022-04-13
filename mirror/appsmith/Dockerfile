@@ -1,2 +1,2 @@
-FROM appsmith/appsmith-ce:latest@sha256:db2003e5a625a7b0d5fc68550c87f67d935e7aac8a7f1891e58b6a1ea4523f9c
+FROM appsmith/appsmith-ce:latest@sha256:1d1313446d67e382ad295b0f9e8d84d06c49aab42e1eb9a79aad8ab3d3fe65b9
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers
