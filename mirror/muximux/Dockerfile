@@ -1,2 +1,2 @@
-FROM ghcr.io/linuxserver/muximux:version-057352e8@sha256:d51864d006a89c4d809747ab04d5f8153009a62acdb806102a07fd8a83af58db
+FROM ghcr.io/linuxserver/muximux:version-057352e8@sha256:7d7ee8fe58ccd1a6a11b47babd2ed1d3dc2cb2c6f83832dedfbaee0630814b30
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
