@@ -1,2 +1,2 @@
-FROM ghcr.io/linuxserver/dokuwiki:2021.11.28@sha256:441a75ea0a697391a0b087fe8e0bb317b4cbe54c989625ec5baf9d5d676926bb
+FROM bitnami/dokuwiki:20200729.0.0@sha256:1b3d98dcc0a6f4866cb0107d637331922806fed8e295cb796a16b7552e77efae
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
