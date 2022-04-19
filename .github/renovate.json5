@@ -129,6 +129,12 @@
     {
       "matchDatasources": ["docker"],
       "versioning": "regex:^(?<major>\\d+)-(?<minor>\\d+)-(?<patch>\\d+)$",
+      "matchPackageNames": ["rssbridge/rss-bridge"],
+      "automerge": true,
+    },	  
+    {
+      "matchDatasources": ["docker"],
+      "versioning": "regex:^(?<major>\\d+)-(?<minor>\\d+)-(?<patch>\\d+)$",
       "matchPackageNames": ["alexta69/metube"],
       "automerge": true,
     },
