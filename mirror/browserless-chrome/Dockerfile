@@ -1,2 +1,2 @@
-FROM browserless/chrome:1.52.0-chrome-stable@sha256:140e30d0c389b0c6af511edc680badf0262936b90db07198bb992060d9549f0e
+FROM browserless/chrome:1.52.1-chrome-stable@sha256:935f2cde1029870f1691af28c4194dd4166f58b1c11114dfe6959ee86f0cf406
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
