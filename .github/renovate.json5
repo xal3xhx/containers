@@ -131,11 +131,29 @@
       "versioning": "regex:^(?<major>\\d+)-(?<minor>\\d+)-(?<patch>\\d+)$",
       "matchPackageNames": ["rssbridge/rss-bridge"],
       "automerge": true,
-    },	  
+    },
     {
       "matchDatasources": ["docker"],
       "versioning": "regex:^(?<major>\\d+)-(?<minor>\\d+)-(?<patch>\\d+)$",
       "matchPackageNames": ["alexta69/metube"],
+      "automerge": true,
+    },
+    {
+      "matchDatasources": ["docker"],
+      "versioning": "regex:^ubuntu-(?<major>\\d+).(?<minor>\\d+).(?<patch>\\d+)$",
+      "matchPackageNames": ["zabbix/zabbix-server-pgsql"],
+      "automerge": true,
+    },
+    {
+      "matchDatasources": ["docker"],
+      "versioning": "regex:^ubuntu-(?<major>\\d+).(?<minor>\\d+).(?<patch>\\d+)$",
+      "matchPackageNames": ["zabbix/zabbix-snmptraps"],
+      "automerge": true,
+    },
+    {
+      "matchDatasources": ["docker"],
+      "versioning": "regex:^ubuntu-(?<major>\\d+).(?<minor>\\d+).(?<patch>\\d+)$",
+      "matchPackageNames": ["zabbix/zabbix-web-nginx-pgsql"],
       "automerge": true,
     },
     {
