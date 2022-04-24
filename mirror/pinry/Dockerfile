@@ -1,2 +1,2 @@
-FROM getpinry/pinry:2.1.7@sha256:2708b4d88747b07b8fef8f9fbf8ba0124562586b5a8a64ec739ff0071e7f8724
+FROM getpinry/pinry:2.1.9@sha256:809f80afaefefb8be8db348e81152106a057d07857d095fca3906f57f61c04e8
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers
