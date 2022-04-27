@@ -1,2 +1,2 @@
-FROM jlesage/czkawka:latest@sha256:b5562d7423cd1f3fa4c28f6a13acf85d67509e6bf30df0a28953c6958dc6dea4
+FROM jlesage/czkawka:latest@sha256:5cf6f690e7a7168f854c7f295d2e5e1866aa6a727024338d709c6f5c62afad51
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers
