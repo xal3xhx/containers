@@ -1,2 +1,2 @@
-FROM ghcr.io/kiranshila/doplarr:v3.3.0@sha256:e50953500a73b4dc2670790f8c3f178387eee1a70819aefe4f2c8d9b8d17c116
+FROM ghcr.io/kiranshila/doplarr:v3.4.0@sha256:46b3618369909370e4e7839c8d70c5f83324d456fab35e1a48323438d9c0e458
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
