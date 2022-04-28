@@ -1,2 +1,2 @@
-FROM koehn/diaspora:v0.7.16.0@sha256:30fb383635e0d3d435c196c0291505337d32f2aa9552b0a36a17aac22a055781
+FROM koehn/diaspora:0.7.17.0@sha256:99a9795645c11b4cd13d6144a78fffe6a643d8962aba40d18b020288508e8db8
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
