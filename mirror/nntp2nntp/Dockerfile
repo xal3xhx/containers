@@ -1,2 +1,2 @@
-FROM ghcr.io/linuxserver/nntp2nntp:0.3.20211221@sha256:d83927a2ae176275ca800cfe12f0345dc8307a54f1bb9865fe70218fad57fe46
+FROM ghcr.io/linuxserver/nntp2nntp:0.3.20220503@sha256:199820e8b70361c02925177c078d00e25c7ff6f51f69c57452e7c5ffbdd16aed
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
