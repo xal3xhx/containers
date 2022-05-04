@@ -5,7 +5,7 @@ ARG VARIANT="2"
 FROM quay.io/helmpack/chart-releaser:v1.4.0@sha256:f9e6b06a1d60bcd94a2a6a4988a59233936239347c69b4ab2d99916ffc848a5b AS cr
 
 # hadolint ignore=DL3007
-FROM jnorwood/helm-docs:v1.8.1@sha256:9f054f590b49efe7deb933bd02b47911434ba7dde9890e757ce6e74920d8b520 AS hd
+FROM jnorwood/helm-docs:v1.9.1@sha256:622b9cde189fa6f8c1dbb3692dbea6f7816e078cd5fcfa042fe0d859077c6ea7 AS hd
 
 # hadolint ignore=DL3007
 FROM quay.io/git-chglog/git-chglog:0.15.1@sha256:471db4cefc1a4dc0d8ee996447d5ac860f9496c982bcd29e90b390aff4e78175 AS gcl

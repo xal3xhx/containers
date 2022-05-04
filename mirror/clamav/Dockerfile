@@ -1,2 +1,3 @@
-FROM clamav/clamav:0.104.2@sha256:6744944e6ddb54c97d7590cc4a4907b6097d084a2b0bf8ee97078a743caa7881
+FROM clamav/clamav:0.104.3@sha256:6e578dd9c0a6453c263b0a4af439432ad789e04d4fa88db44a38648f7c47b2c4
+
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"

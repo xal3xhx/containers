@@ -1,2 +1,2 @@
-FROM raesene/bwapp:latest@sha256:fb531ed33afc6b036f18e41ce598c957b34ebc7830bbbb368595175551d5e5b4
+FROM raesene/bwapp:latest@sha256:b4814b27ca36b7918528525a1d142e8e41b2564efc7b6b5e9b4cd6312455834c
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers
