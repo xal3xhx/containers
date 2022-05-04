@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.0.0
+        uses: actions/checkout@722adc63f1aa60a57ec37892e133b1d319cae598 # tag=v2.0.0
         with:
           token: ${{ secrets.BOT_TOKEN }}
       - name: Self-hosted Renovate
-        uses: renovatebot/github-action@v32.0.1
+        uses: renovatebot/github-action@3e7836435a56721c1070df090d5a8381ddabd66f # tag=v32.0.1
         with:
           configurationFile: .github/renovate-config.js
           token: ${{ secrets.BOT_TOKEN }}
