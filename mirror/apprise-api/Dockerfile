@@ -1,2 +1,2 @@
-FROM lscr.io/linuxserver/apprise-api:latest@sha256:db438c097160f510d2eea6a0d42611c33cf9e6e59327cab7605ef74593f942d6
+FROM lscr.io/linuxserver/apprise-api:latest@sha256:3b7a56bbe06f9379e8dea76a719d0c0fbde320799220037134c161161c545f64
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers
