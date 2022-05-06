@@ -1,2 +1,2 @@
-FROM ich777/anope:latest@sha256:8e20b4022ecd06c8c43d36667793407a20d0030c1813f4037f0ce75928492edd
+FROM ich777/anope:latest@sha256:97bf54f61ff9ae79b50fc752bf17dfe4a13b8f532422c240b5ecdfed452116c3
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers
