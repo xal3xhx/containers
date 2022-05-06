@@ -1,2 +1,2 @@
-FROM ich777/steamcmd:chivalrymw@sha256:aeeec24b182e42e699d608f0601ea4bece20980ba5c86f2a4f9b578eb1a4d248
+FROM ich777/steamcmd:chivalrymw@sha256:87e11f5745d8b01942cae93612424ebafdb7a08c99a8ca22185d45e5a770ffb5
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers

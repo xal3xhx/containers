@@ -1,2 +1,2 @@
-FROM ich777/steamcmd:barotrauma@sha256:ff4da31d5061577e694161700077a18888b4550097ab155139a976e83ff23bdb
+FROM ich777/steamcmd:barotrauma@sha256:0ec6a57ad29432de50146498287aaf5a3d7b5db8962428226b06e824a5776992
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers
