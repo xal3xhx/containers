@@ -1,6 +1,6 @@
-FROM docker.io/nextcloud:23.0.4@sha256:e590c3b0b1ca2e6a5787e5245ab4192ecb60051f863fc97abd664cf406385783
+FROM docker.io/nextcloud:24.0.0@sha256:441481f9e245f2b9a62fcbfe9cb10eb136b8fe3b80282726eb2257728781e61f
 
-# hadolint ignore=DL3008,DL3015,SC2086,SC2155
+# hadolint ignore=DL3008,DL3015,SC2086,SC2155,DL4006
 RUN set -ex; \
     \
     apt-get update; \
