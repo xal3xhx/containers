@@ -170,6 +170,12 @@
     },
     {
       "matchDatasources": ["docker"],
+      "versioning": "regex:^(?<major>\\d+).(?<minor>\\d+).(?<patch>\\d+)-amd64(nvidia)?$",
+      "matchPackageNames": ["blakeblackshear/frigate"],
+      "automerge": true,
+    },
+    {
+      "matchDatasources": ["docker"],
       "automerge": true,
       "matchUpdateTypes": ["major", "minor", "patch", "digest", "pin"],
     },
