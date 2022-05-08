@@ -17,7 +17,7 @@
       "enabled": true,
       "automerge": true,
       "matchUpdateTypes": ["major", "minor", "patch", "digest", "pin"],
-	  "pinDigests": true,
+      "pinDigests": true,
     },
     {
       "matchDatasources": ["docker"],
@@ -166,6 +166,12 @@
       "matchDatasources": ["docker"],
       "versioning": "regex:^ngx-(?<major>\\d+).(?<minor>\\d+).(?<patch>\\d+)$",
       "matchPackageNames": ["paperless-ngx/paperless-ngx"],
+      "automerge": true,
+    },
+    {
+      "matchDatasources": ["docker"],
+      "versioning": "regex:^(?<major>\\d{1,4}).(?<minor>\\d+).(?<patch>\\d+)$",
+      "matchPackageNames": ["kopia/kopia"],
       "automerge": true,
     },
     {
