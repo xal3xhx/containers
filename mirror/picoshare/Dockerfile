@@ -1,2 +1,2 @@
-FROM mtlynch/picoshare:1.1.5@sha256:f1f6e3f86aac9eba00389b95eafff99b160ee782d40e1f90aabab75e5fbe39ca
+FROM mtlynch/picoshare:1.1.6@sha256:766bef7cc5c7a35c192c155516a01232aca999aaa729537e5a816d8e18748731
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
