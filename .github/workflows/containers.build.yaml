@@ -101,6 +101,7 @@ jobs:
           VERSION=$(echo $VERSION | sed "s/version-//g")
           VERSION=$(echo $VERSION | sed "s/version_//g")
           VERSION=$(echo $VERSION | sed "s/apache-//g")
+          VERSION=$(echo $VERSION | sed "s/ubuntu-//g")
           VERSION=$(echo $VERSION | sed "s/fpm-//g")
           VERSION="${VERSION#*V.}"
           VERSION="${VERSION#*v.}"
@@ -222,7 +223,7 @@ jobs:
     steps:
       - name: complete message
         run: echo "Container Build and Tests Completed Successfully"
-        
+
   automerge:
     needs: [container-build-complete]
     name: Automerge build
