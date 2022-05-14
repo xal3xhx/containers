@@ -1,2 +1,2 @@
-FROM apendergast/crypto-exchanges-gateway:latest@sha256:7ffcacb12c5e410b442b297b789ac8074bcfc606ae0b421660a1cdf9f47b97a0
+FROM apendergast/crypto-exchanges-gateway:latest@sha256:ae7f8621ef71e9e6e9da867278f4e4ea529ad5c5065cdac678bc273a8d3affcc
 LABEL org.opencontainers.image.source=https://github.com/truecharts/containers
