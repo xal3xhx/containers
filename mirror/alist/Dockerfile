@@ -1,2 +1,2 @@
-FROM xhofe/alist:v2.5.1@sha256:bccbe3fa9cf80465b34b1ba3456d2f0e2a6d959699fa58123b53bc49ca2f55f6
+FROM xhofe/alist:v2.5.2@sha256:2e51d4040ad37ce5def381b274e10685e0799dfd0e14c3302d0d876f96c41610
 LABEL "org.opencontainers.image.source"="https://github.com/truecharts/containers"
